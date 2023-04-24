@@ -131,6 +131,12 @@ function Page({
     let body = document.querySelector('body')
     body.style.overflow = 'hidden'
 
+    // let song = document.querySelector('#song')
+    // if (song.paused) {
+    //   song.volume = 0.2
+    //   song.play()
+    // }
+
     anime
       .timeline()
       .add({
@@ -182,7 +188,7 @@ function Page({
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              height: '100%',
+              height: '100%'
             }}
           >
             <Box
@@ -202,32 +208,35 @@ function Page({
               }}
             >
               Hackers Wanted: Our Story
-              <Button 
-              as="a"
-              href="/hackers-wanted"
-              sx={{
-                background: '#fff',
-                borderImage: 'url(https://sakofchit.github.io/system.css/button.svg) 30 stretch',
-                borderStyle: 'solid',
-                fontFamily: 'Chicago_12',
-                borderWidth: '10px',
-                minWidth: '100px',
-                textAlign: 'center',
-                color: '#000',
-                lineHeight: '0.9em',
-                textDecoration: 'none',
-                p: 0,
-                borderRadius: '13px',
-                mt: 3,
-                '&:active': {
-                  background: '#000',
-                  color: '#fff',
-                },
-                '&:hover': {
-                  cursor: 'pointer'
-                }
-              }}
-              >Read</Button>
+              <Button
+                as="a"
+                href="/hackers-wanted"
+                sx={{
+                  background: '#fff',
+                  borderImage:
+                    'url(https://sakofchit.github.io/system.css/button.svg) 30 stretch',
+                  borderStyle: 'solid',
+                  fontFamily: 'Chicago_12',
+                  borderWidth: '10px',
+                  minWidth: '100px',
+                  textAlign: 'center',
+                  color: '#000',
+                  lineHeight: '0.9em',
+                  textDecoration: 'none',
+                  p: 0,
+                  borderRadius: '13px',
+                  mt: 3,
+                  '&:active': {
+                    background: '#000',
+                    color: '#fff'
+                  },
+                  '&:hover': {
+                    cursor: 'pointer'
+                  }
+                }}
+              >
+                Read
+              </Button>
             </Box>
             <img
               src="https://cloud-76740yvae-hack-club-bot.vercel.app/0dither_it_flag-standalone-bw__5_.png"
@@ -242,6 +251,12 @@ function Page({
                 userSelect: 'none'
               }}
             />
+            <audio id="song" sx={{display: 'none'}}>
+              <source
+                src="https://cloud-2wquhm8wa-hack-club-bot.vercel.app/0mac_audio.mp4"
+                type="audio/mp3"
+              />
+            </audio>
           </Box>
         </Box>
         <Secret
@@ -323,8 +338,9 @@ function Page({
                 >
                   <Text
                     onClick={() => {
-                      setHover(false)
-                      !reveal ? setReveal(true) : setReveal(false)
+                      // setHover(false)
+                      // !reveal ? setReveal(true) : setReveal(false)
+                      loadHackersWanted()
                     }}
                     sx={{
                       // lineHeight: 0.875,

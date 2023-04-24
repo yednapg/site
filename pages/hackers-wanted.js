@@ -151,7 +151,7 @@ di p, ol {
   background-clip: text;
   background-repeat:no-repeat;
   animation:
-   t calc(300*.06s) steps(300) forwards;
+   t calc(300*.04s) steps(300) forwards;
 }
 
 @keyframes t{
@@ -227,7 +227,12 @@ const Page = () => {
         >
           <Text className={styles.titlebar}>
             <Text className={styles.title} as="h1">
-            <Image src="https://cloud-prhr6mr92-hack-club-bot.vercel.app/0dither_it_flag-standalone-bw__5___1_.png" layout="responsive" width={50} sx={{textAlign: 'center'}}/>
+              <Image
+                src="https://cloud-prhr6mr92-hack-club-bot.vercel.app/0dither_it_flag-standalone-bw__5___1_.png"
+                layout="responsive"
+                width={50}
+                sx={{ textAlign: 'center' }}
+              />
             </Text>
           </Text>
           <Box className={styles.separator}>
@@ -243,17 +248,21 @@ const Page = () => {
               // </button>
               " "
               ) : ( */}
+              {/* )} */}
+              <Text as="p" className={styles.hackers}>
                 <button
                   className={styles.btn}
                   onClick={() => {
                     signIn('github')
                     sign()
                   }}
+                  sx={{
+                    my: 2
+                  }}
                 >
                   Sign
                 </button>
-              {/* )} */}
-              <Text as="p" className={styles.hackers}>
+                <Text sx={{fontSize: '1.1em', fontFamily: 'Chicago', display: 'block'}}>With love,</Text>
                 <Flex sx={{ flexWrap: 'wrap' }}>
                   {hackers &&
                     hackers.map(e => <Hack>{e.fields.username}</Hack>)}
