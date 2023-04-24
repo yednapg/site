@@ -36,6 +36,9 @@ import Icon from '../components/icon'
 import GitHub from '../components/index/github'
 import Photo from '../components/photo'
 import Comma from '../components/comma'
+import styles from '../styles/Home.module.css'
+import Image from 'next/image'
+import anime from 'animejs/lib/anime.es.js'
 
 /** @jsxImportSource theme-ui */
 
@@ -122,6 +125,33 @@ function Page({
     }
   }, [count, images.length])
 
+  function loadHackersWanted() {
+    let e = document.getElementById('load')
+    e.style.display = 'block'
+    let body = document.querySelector('body')
+    body.style.overflow = 'hidden'
+
+    anime
+      .timeline()
+      .add({
+        targets: 'img',
+        duration: 2000,
+        opacity: [0, 1],
+        easing: 'easeOutExpo',
+        delay: 800
+      })
+      .add({
+        targets: 'img',
+        duration: 500,
+        opacity: 0
+      })
+      .add({
+        targets: '#text',
+        duration: 2000,
+        opacity: [0, 1],
+        delay: 1200
+      })
+  }
   return (
     <>
       <Meta
@@ -146,6 +176,74 @@ function Page({
           position: 'relative'
         }}
       >
+        <Box className={styles.load} id="load">
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '100%',
+            }}
+          >
+            <Box
+              id="text"
+              sx={{
+                width: '70vw',
+                height: '25vw',
+                background: 'white',
+                border: '2px solid',
+                boxShadow: '2px 2px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontFamily: 'Chicago',
+                fontSize: '2em',
+                flexDirection: 'column'
+              }}
+            >
+              Hackers Wanted: Our Story
+              <Button 
+              as="a"
+              href="/hackers-wanted"
+              sx={{
+                background: '#fff',
+                borderImage: 'url(https://sakofchit.github.io/system.css/button.svg) 30 stretch',
+                borderStyle: 'solid',
+                fontFamily: 'Chicago_12',
+                borderWidth: '10px',
+                minWidth: '100px',
+                textAlign: 'center',
+                color: '#000',
+                lineHeight: '0.9em',
+                textDecoration: 'none',
+                p: 0,
+                borderRadius: '13px',
+                mt: 3,
+                '&:active': {
+                  background: '#000',
+                  color: '#fff',
+                },
+                '&:hover': {
+                  cursor: 'pointer'
+                }
+              }}
+              >Read</Button>
+            </Box>
+            <img
+              src="https://cloud-76740yvae-hack-club-bot.vercel.app/0dither_it_flag-standalone-bw__5_.png"
+              sx={{
+                minWidth: '80px',
+                width: '10vw',
+                opacity: 0,
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, 50%)',
+                userSelect: 'none'
+              }}
+            />
+          </Box>
+        </Box>
         <Secret
           reveal={reveal}
           onMouseEnter={() => {
@@ -338,10 +436,7 @@ function Page({
               in-person to make things with code. Whether you’re a beginner
               programmer or have years of experience, there’s a place for you at
               Hack&nbsp;Club. Read about our{' '}
-              <Link href="/philosophy" target="_blank" rel="noopener">
-                hacker ethic
-              </Link>
-              .
+              <Link onClick={() => loadHackersWanted()}>hacker ethic</Link>.
             </Text>
             <Grid columns={[1, 1, 1, '2.5fr 3fr']} gap={[0, 3, 4]} pt={[3, 4]}>
               <Box
