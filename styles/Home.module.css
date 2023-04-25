@@ -1,12 +1,11 @@
 .load {
-  display: none;
   background: linear-gradient(45deg,#000 25%,transparent 0,transparent 75%,#000 0,#000),linear-gradient(45deg,#000 25%,transparent 0,transparent 75%,#000 0,#000), #fff;
   background-size: 4px 4px;
   background-position: 0 0,2px 2px;
   width: 100vw;
   height: 100vh;
-  position: fixed;
-  z-index: 2000;
+  /* position: fixed;
+  z-index: 2000; */
 }
 
 .title {
@@ -182,13 +181,25 @@
   animation: load 0.8s;
 }
 
+.loadOne {
+  animation: load 1.3s;
+}
+.loadTwo {
+  animation: load 1.4s;
+}
+.loadThree {
+  animation: load 1.5s;
+}
+.loadFour {
+  animation: load 1.6s;
+}
+
 .windowpane {
   font-size: 18px;
-  height: 100%;
   letter-spacing: -0.025em;
   overflow-y: scroll;
   padding: 0.5rem 1rem;
-  min-height: calc(100vh - 64px);
+  height: calc(100vh - 64px - 257px);
   animation: load 1.1s;
 }
 .windowpane::-webkit-scrollbar {

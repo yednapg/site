@@ -4,14 +4,14 @@ import ForceTheme from '../components/force-theme'
 import Meta from '@hackclub/meta'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Hackers from '../components/hackers-wanted.mdx'
+import Hackers from '../components/hackers-wanted/letter.mdx'
 import React, { useEffect, useState } from 'react'
 import { useSession, getSession, signIn, signOut } from 'next-auth/react'
 import Github from 'next-auth/providers/github'
 import useSWR from 'swr'
 import fetcher from '../lib/fetcher'
 import { Fade } from 'react-reveal'
-
+import HButton from '../components/hackers-wanted/button'
 /** @jsxImportSource theme-ui */
 
 const styled = `
@@ -160,7 +160,7 @@ di p, ol {
 }
 `
 
-const Hack = ({ children }) => {
+const Hack = ({ children, ...props }) => {
   return (
     <Fade>
       <Box
@@ -213,69 +213,102 @@ const Page = () => {
         sx={{ display: 'flex', justifyContent: 'space-between', gap: '32px' }}
       >
         <Box
-          className={styles.window}
           sx={{
             position: 'sticky',
             top: '18px',
             left: '18px',
-            height: 'calc(100vh - 36px)',
-            display: 'flex',
+            height: '100vh',
             minWidth: '200px',
             maxWidth: '250px'
-            // overflow: 'scroll'
           }}
         >
-          <Text className={styles.titlebar}>
-            <Text className={styles.title} as="h1">
-              <Image
-                src="https://cloud-prhr6mr92-hack-club-bot.vercel.app/0dither_it_flag-standalone-bw__5___1_.png"
-                layout="responsive"
-                width={50}
-                sx={{ textAlign: 'center' }}
-              />
-            </Text>
-          </Text>
-          <Box className={styles.separator}>
-            <Box className={styles.windowpane} sx={{ minWidth: '200px' }}>
-              {/* {session ? (
-              //   <button
-              //   className={styles.btn}
-              //   onClick={() => {
-              //     signOut()
-              //   }}
-              // >
-              //   Sign out
-              // </button>
-              " "
-              ) : ( */}
-              {/* )} */}
-              <Text as="p" className={styles.hackers}>
-                <button
-                  className={styles.btn}
-                  onClick={() => {
-                    signIn('github')
-                    sign()
-                  }}
-                  sx={{
-                    my: 2
-                  }}
-                >
-                  Sign
-                </button>
-                <Text sx={{fontSize: '1.1em', fontFamily: 'Chicago', display: 'block'}}>With love,</Text>
-                <Flex sx={{ flexWrap: 'wrap' }}>
-                  {hackers &&
-                    hackers.map(e => <Hack>{e.fields.username}</Hack>)}
-                </Flex>
+          <Box
+            className={styles.window}
+            sx={{
+              position: 'relative',
+              height: 'calc(100vh - 64px - 230px)',
+              display: 'flex',
+              width: '100%',
+              boxShadow: '4px 4px #434343'
+              // overflow: 'scroll'
+            }}
+          >
+            <Text className={styles.titlebar}>
+              <Text className={styles.title} as="h1">
+                <Image
+                  src="https://cloud-prhr6mr92-hack-club-bot.vercel.app/0dither_it_flag-standalone-bw__5___1_.png"
+                  layout="responsive"
+                  width={50}
+                  sx={{ textAlign: 'center' }}
+                />
               </Text>
+            </Text>
+            <Box>
+              <Box className={styles.separator}>
+                <Box className={styles.windowpane} sx={{ minWidth: '200px' }}>
+                  <Text as="p" className={styles.hackers}>
+                    {status == 'authenticated' ? (
+                      <></>
+                    ) : (
+                      <button
+                        className={styles.btn}
+                        onClick={() => {
+                          signIn('github')
+                          sign()
+                        }}
+                        sx={{
+                          my: 2
+                        }}
+                      >
+                        Sign
+                      </button>
+                    )}
+                    <Text
+                      sx={{
+                        fontSize: '1.1em',
+                        fontFamily: 'Chicago',
+                        display: 'block'
+                      }}
+                    >
+                      With love,
+                    </Text>
+                    <Flex sx={{ flexWrap: 'wrap' }}>
+                      {hackers &&
+                        hackers.map(e => <Hack>{e.fields.username}</Hack>)}
+                    </Flex>
+                  </Text>
+                </Box>
+              </Box>
             </Box>
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              width: '100%',
+              height: '240px',
+              mt: '24px'
+            }}
+          >
+            <HButton link="a" sx={{ width: '50%', height: '50%', mt: 0, background: '#000', color: '#fff' }} className={styles.loadOne}>
+              Sign
+            </HButton>
+            <HButton link="a" sx={{ width: '50%', height: '50%', mt: 0 }} className={styles.loadTwo}>
+              Mail me this manifesto
+            </HButton>
+            <HButton link="a" sx={{ width: '50%', height: '50%', mt: 0 }} className={styles.loadThree}>
+              Join the chatroom
+            </HButton>
+            <HButton link="a" sx={{ width: '50%', height: '50%', mt: 0 }} className={styles.loadFour}>
+              Hi
+            </HButton>
           </Box>
         </Box>
         <Box
           className={styles.standarddialog}
           sx={{
             marginTop: '18px',
-            marginBottom: '18px',
+            marginBottom: '26px',
             marginRight: '20px',
             flex: 1
           }}

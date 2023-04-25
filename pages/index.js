@@ -39,7 +39,7 @@ import Comma from '../components/comma'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import anime from 'animejs/lib/anime.es.js'
-
+import HButton from '../components/hackers-wanted/button'
 /** @jsxImportSource theme-ui */
 
 function Page({
@@ -126,7 +126,7 @@ function Page({
   }, [count, images.length])
 
   function loadHackersWanted() {
-    let e = document.getElementById('load')
+    let e = document.getElementById('load-bg')
     e.style.display = 'block'
     let body = document.querySelector('body')
     body.style.overflow = 'hidden'
@@ -139,6 +139,12 @@ function Page({
 
     anime
       .timeline()
+      .add({
+        targets: '#load',
+        duration: 5000,
+        translateY: '100vh',
+        easing: 'steps(30)'
+      })
       .add({
         targets: 'img',
         duration: 2000,
@@ -182,13 +188,16 @@ function Page({
           position: 'relative'
         }}
       >
-        <Box className={styles.load} id="load">
+        <Box sx={{width: '100vw', height: '100vh', background: '#0000', position: 'fixed', display: 'none', zIndex: 2000}} id="load-bg">
+          <Box className={styles.load} id="load" sx={{position: 'absolute', top: '-100vh'}}></Box>
           <Box
             sx={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              height: '100%'
+              height: '100%',
+              zIndex: 2003,
+              position: 'relative'
             }}
           >
             <Box
@@ -198,7 +207,7 @@ function Page({
                 height: '25vw',
                 background: 'white',
                 border: '2px solid',
-                boxShadow: '2px 2px',
+                boxShadow: '6px 6px',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -208,35 +217,7 @@ function Page({
               }}
             >
               Hackers Wanted: Our Story
-              <Button
-                as="a"
-                href="/hackers-wanted"
-                sx={{
-                  background: '#fff',
-                  borderImage:
-                    'url(https://sakofchit.github.io/system.css/button.svg) 30 stretch',
-                  borderStyle: 'solid',
-                  fontFamily: 'Chicago_12',
-                  borderWidth: '10px',
-                  minWidth: '100px',
-                  textAlign: 'center',
-                  color: '#000',
-                  lineHeight: '0.9em',
-                  textDecoration: 'none',
-                  p: 0,
-                  borderRadius: '13px',
-                  mt: 3,
-                  '&:active': {
-                    background: '#000',
-                    color: '#fff'
-                  },
-                  '&:hover': {
-                    cursor: 'pointer'
-                  }
-                }}
-              >
-                Read
-              </Button>
+              <HButton link="/hackers-wanted">Read</HButton>
             </Box>
             <img
               src="https://cloud-76740yvae-hack-club-bot.vercel.app/0dither_it_flag-standalone-bw__5_.png"
