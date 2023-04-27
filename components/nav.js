@@ -166,7 +166,7 @@ const ToggleContainer = styled(Flex)`
   }
 `
 
-function Header({ unfixed, color, bgColor, dark, fixed, ...props }) {
+function Header({ unfixed, color, bgColor, dark, fixed, flag, ...props }) {
   const [scrolled, setScrolled] = useState(false)
   const [toggled, setToggled] = useState(false)
   const [mobile, setMobile] = useState(false)
