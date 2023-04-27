@@ -145,24 +145,24 @@ function Page({
         translateY: '100vh',
         easing: 'steps(30)'
       })
-      .add({
-        targets: 'img',
-        duration: 2000,
-        opacity: [0, 1],
-        easing: 'easeOutExpo',
-        delay: 800
-      })
-      .add({
-        targets: 'img',
-        duration: 500,
-        opacity: 0
-      })
-      .add({
-        targets: '#text',
-        duration: 2000,
-        opacity: [0, 1],
-        delay: 1200
-      })
+      // .add({
+      //   targets: 'img',
+      //   duration: 2000,
+      //   opacity: [0, 1],
+      //   easing: 'easeOutExpo',
+      //   delay: 800
+      // })
+      // .add({
+      //   targets: 'img',
+      //   duration: 500,
+      //   opacity: 0
+      // })
+      // .add({
+      //   targets: '#text',
+      //   duration: 2000,
+      //   opacity: [0, 1],
+      //   delay: 1200
+      // })
   }
   return (
     <>
