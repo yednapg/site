@@ -318,11 +318,11 @@ function Page({
                   }}
                 >
                   <Text
-                    onClick={() => {
-                      // setHover(false)
-                      // !reveal ? setReveal(true) : setReveal(false)
-                      loadHackersWanted()
-                    }}
+                    // onClick={() => {
+                    //   // setHover(false)
+                    //   // !reveal ? setReveal(true) : setReveal(false)
+                    //   loadHackersWanted()
+                    // }}
                     sx={{
                       // lineHeight: 0.875,
                       px: 2,
@@ -337,6 +337,8 @@ function Page({
                         cursor: 'pointer'
                       }
                     }}
+                    as="a"
+                    href="/hackers-wanted"
                     aria-hidden="true"
                   >
                     teen hackers
@@ -433,7 +435,7 @@ function Page({
               in-person to make things with code. Whether you’re a beginner
               programmer or have years of experience, there’s a place for you at
               Hack&nbsp;Club. Read about our{' '}
-              <Link onClick={() => loadHackersWanted()}>hacker ethic</Link>.
+              <Link href="/hackers-wanted">hacker ethic</Link>.
             </Text>
             <Grid columns={[1, 1, 1, '2.5fr 3fr']} gap={[0, 3, 4]} pt={[3, 4]}>
               <Box
