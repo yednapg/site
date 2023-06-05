@@ -89,5 +89,5 @@ export default async function handler(req, res) {
       status: 'success',
       message: 'Your request will be reviewed soon.'
     })
-  }
+  1
 }
