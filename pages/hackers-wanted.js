@@ -46,13 +46,15 @@ h1 {
 h3 {
   font-family: Space_Grotesk;
   font-weight: 400;
-  line-height: 1.3;
+  font-size: 1.6em;
+  line-height: 1.6;
 }
 
 h4 {
   font-family: Terminal_Grotesk;
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: 1.6em;
+  line-height: 1.6;
 }
 
 button {
@@ -62,14 +64,14 @@ button {
 a, p, ol {
   font-family: Space_Grotesk;
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23000' d='M8 4h1v1H8zM9 4h1v1H9z'/%3E%3Cpath fill='%23fff' d='M10 4h1v1h-1zM12 4h1v1h-1zM13 3h1v1h-1zM14 3h1v1h-1z'/%3E%3Cpath fill='%23000' d='M13 4h1v1h-1zM14 4h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M15 4h1v1h-1zM8 5h1v1H8zM7 4h1v1H7zM8 3h1v1H8zM9 3h1v1H9zM9 5h1v1H9z'/%3E%3Cpath fill='%23000' d='M10 5h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M11 5h1v1h-1z'/%3E%3Cpath fill='%23000' d='M12 5h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M13 5h1v1h-1zM14 5h1v1h-1zM9 6h1v1H9zM10 6h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 6h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 6h1v1h-1zM13 6h1v1h-1zM10 7h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 7h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 7h1v1h-1zM10 8h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 8h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 8h1v1h-1zM10 9h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 9h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 9h1v1h-1zM10 10h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 10h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 10h1v1h-1zM10 11h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 11h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 11h1v1h-1zM10 12h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 12h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 12h1v1h-1zM10 13h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 13h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 13h1v1h-1zM10 14h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 14h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 14h1v1h-1zM10 15h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 15h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 15h1v1h-1zM10 16h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 16h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 16h1v1h-1zM10 17h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 17h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 17h1v1h-1zM9 18h1v1H9zM8 18h1v1H8zM7 19h1v1H7z'/%3E%3Cpath fill='%23000' d='M10 18h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 18h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M12 18h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M13 18h1v1h-1zM14 18h1v1h-1z'/%3E%3Cpath fill='%23000' d='M8 19h1v1H8zM9 19h1v1H9z'/%3E%3Cpath fill='%23fff' d='M10 19h1v1h-1zM11 18h1v1h-1zM12 19h1v1h-1z'/%3E%3Cpath fill='%23000' d='M13 19h1v1h-1zM14 19h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M15 19h1v1h-1zM9 20h1v1H9zM8 20h1v1H8zM13 20h1v1h-1zM14 20h1v1h-1z'/%3E%3C/svg%3E") 7 3, text;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 button, a {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23fff' d='M7 4h1v1H7zM8 4h1v1H8zM10 4h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 4h1v1h-1zM12 4h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M13 4h1v1h-1zM12 3h1v1h-1zM11 3h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM6 5h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 5h1v1H7zM8 5h1v1H8z'/%3E%3Cpath fill='%23fff' d='M9 5h1v1H9z'/%3E%3Cpath fill='%23000' d='M10 5h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 5h1v1h-1zM12 5h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M13 5h1v1h-1zM14 5h1v1h-1zM15 5h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M16 5h1v1h-1zM5 6h1v1H5z'/%3E%3Cpath fill='%23000' d='M6 6h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 6h1v1H7zM8 6h1v1H8z' opacity='.1'/%3E%3Cpath fill='%23000' d='M9 6h1v1H9zM10 6h1v1h-1zM13 6h1v1h-1z'/%3E%3Cpath fill='%23000' d='M14 6h1v1h-1zM15 6h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M16 6h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M17 6h1v1h-1zM18 6h1v1h-1zM5 7h1v1H5z'/%3E%3Cpath fill='%23000' d='M6 7h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 7h1v1H7z' opacity='.1'/%3E%3Cpath fill='%23000' d='M9 7h1v1H9zM10 7h1v1h-1zM13 7h1v1h-1zM16 7h1v1h-1zM17 7h1v1h-1zM18 7h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M19 7h1v1h-1zM6 8h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 8h1v1H7z'/%3E%3Cpath fill='%23000' d='M9 8h1v1H9z' opacity='.1'/%3E%3Cpath fill='%23000' d='M10 8h1v1h-1zM13 8h1v1h-1zM16 8h1v1h-1z'/%3E%3Cpath fill='%23000' d='M17 8h1v1h-1zM18 8h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M19 8h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M20 8h1v1h-1zM18 8h1v1h-1zM17 8h1v1h-1zM18 9h1v1h-1zM17 9h1v1h-1zM18 10h1v1h-1zM17 10h1v1h-1zM18 11h1v1h-1zM17 11h1v1h-1zM17 12h1v1h-1zM17 13h1v1h-1zM17 14h1v1h-1zM6 9h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 9h1v1H7z'/%3E%3Cpath fill='%23000' d='M8 9h1v1H8z' opacity='.1'/%3E%3Cpath fill='%23000' d='M10 9h1v1h-1zM13 9h1v1h-1zM16 9h1v1h-1zM19 9h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M20 9h1v1h-1zM4 10h1v1H4z'/%3E%3Cpath fill='%23000' d='M5 10h1v1H5zM6 10h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 10h1v1H7z' opacity='.1'/%3E%3Cpath fill='%23000' d='M8 10h1v1H8z'/%3E%3Cpath fill='%23000' d='M9 10h1v1H9zM10 10h1v1h-1zM13 10h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M16 10h1v1h-1zM19 10h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M20 10h1v1h-1z'/%3E%3Cpath fill='%23000' d='M4 11h1v1H4z'/%3E%3Cpath fill='%23000' d='M5 11h1v1H5zM6 11h1v1H6z' opacity='.1'/%3E%3Cpath fill='%23000' d='M7 11h1v1H7zM8 11h1v1H8z'/%3E%3Cpath fill='%23000' d='M9 11h1v1H9zM16 11h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23fff' d='M16 11h1v1h-1zM16 12h1v1h-1zM16 13h1v1h-1zM16 14h1v1h-1zM16 15h1v1h-1zM16 16h1v1h-1zM15 16h1v1h-1zM15 17h1v1h-1zM14 17h1v1h-1zM13 17h1v1h-1zM12 17h1v1h-1zM11 17h1v1h-1zM10 17h1v1h-1zM10 16h1v1h-1zM10 15h1v1h-1zM10 14h1v1h-1zM10 13h1v1h-1zM10 12h1v1h-1zM10 11h1v1h-1zM10 10h1v1h-1zM9 10h1v1H9zM9 11h1v1H9zM9 12h1v1H9zM9 13h1v1H9zM9 14h1v1H9zM9 15h1v1H9zM8 15h1v1H8zM8 14h1v1H8zM7 14h1v1H7zM7 13h1v1H7zM7 12h1v1H7zM6 12h1v1H6zM5 12h1v1H5zM5 11h1v1H5zM6 11h1v1H6zM7 10h1v1H7zM8 9h1v1H8zM8 8h1v1H8zM8 7h1v1H8zM8 6h1v1H8zM7 6h1v1H7zM7 7h1v1H7zM6 13h1v1H6zM8 13h1v1H8zM9 16h1v1H9zM9 9h1v1H9zM9 8h1v1H9zM11 10h1v1h-1zM11 11h1v1h-1zM11 12h1v1h-1zM11 13h1v1h-1zM11 14h1v1h-1zM11 15h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM13 16h1v1h-1zM14 16h1v1h-1zM14 15h1v1h-1zM14 14h1v1h-1zM14 13h1v1h-1zM14 12h1v1h-1zM14 11h1v1h-1zM14 10h1v1h-1zM14 9h1v1h-1zM14 8h1v1h-1zM14 7h1v1h-1zM14 6h1v1h-1zM13 15h1v1h-1zM13 14h1v1h-1zM13 13h1v1h-1zM13 12h1v1h-1zM13 11h1v1h-1zM13 10h1v1h-1zM12 15h1v1h-1zM12 14h1v1h-1zM12 13h1v1h-1zM12 12h1v1h-1zM12 11h1v1h-1zM12 10h1v1h-1zM12 9h1v1h-1zM12 8h1v1h-1zM12 7h1v1h-1zM12 6h1v1h-1zM12 5h1v1h-1zM11 5h1v1h-1zM11 6h1v1h-1zM11 7h1v1h-1zM11 8h1v1h-1zM11 9h1v1h-1zM15 15h1v1h-1zM15 14h1v1h-1zM15 13h1v1h-1zM15 12h1v1h-1zM15 11h1v1h-1zM15 10h1v1h-1zM15 9h1v1h-1zM15 8h1v1h-1zM15 7h1v1h-1zM15 6h1v1h-1z'/%3E%3Cpath fill='%23000' d='M19 11h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M20 11h1v1h-1z'/%3E%3Cpath fill='%23000' d='M4 12h1v1H4z'/%3E%3Cpath fill='%23000' d='M5 12h1v1H5zM7 12h1v1H7z' opacity='.1'/%3E%3Cpath fill='%23000' d='M8 12h1v1H8z'/%3E%3Cpath fill='%23000' d='M9 12h1v1H9zM17 12h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M18 12h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M19 12h1v1h-1zM4 13h1v1H4zM3 12h1v1H3zM3 11h1v1H3z'/%3E%3Cpath fill='%23000' d='M5 13h1v1H5z'/%3E%3Cpath fill='%23000' d='M6 13h1v1H6zM8 13h1v1H8zM17 13h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M18 13h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M19 13h1v1h-1zM5 14h1v1H5z'/%3E%3Cpath fill='%23000' d='M6 14h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 14h1v1H7zM17 14h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M18 14h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M19 14h1v1h-1zM6 15h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 15h1v1H7z'/%3E%3Cpath fill='%23000' d='M8 15h1v1H8z' opacity='.1'/%3E%3Cpath fill='%23000' d='M17 15h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M18 15h1v1h-1zM7 16h1v1H7z'/%3E%3Cpath fill='%23000' d='M8 16h1v1H8z'/%3E%3Cpath fill='%23000' d='M9 16h1v1H9zM16 16h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M17 16h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M18 16h1v1h-1zM7 17h1v1H7z'/%3E%3Cpath fill='%23000' d='M8 17h1v1H8zM9 17h1v1H9z'/%3E%3Cpath fill='%23000' d='M10 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M16 17h1v1h-1zM17 17h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M18 17h1v1h-1zM8 18h1v1H8z'/%3E%3Cpath fill='%23000' d='M9 18h1v1H9zM10 18h1v1h-1zM11 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM15 18h1v1h-1zM16 18h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M17 18h1v1h-1zM8 19h1v1H8z'/%3E%3Cpath fill='%23000' d='M9 19h1v1H9zM10 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM14 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M17 19h1v1h-1zM9 20h1v1H9zM10 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM13 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1z'/%3E%3C/svg%3E") 5 4, grab;
 }
 
-#modal {
+#modal, #modal-slack, #modal-github {
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23fff' d='M7 4h1v1H7zM8 4h1v1H8zM10 4h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 4h1v1h-1zM12 4h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M13 4h1v1h-1zM12 3h1v1h-1zM11 3h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM6 5h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 5h1v1H7zM8 5h1v1H8z'/%3E%3Cpath fill='%23fff' d='M9 5h1v1H9z'/%3E%3Cpath fill='%23000' d='M10 5h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 5h1v1h-1zM12 5h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M13 5h1v1h-1zM14 5h1v1h-1zM15 5h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M16 5h1v1h-1zM5 6h1v1H5z'/%3E%3Cpath fill='%23000' d='M6 6h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 6h1v1H7zM8 6h1v1H8z' opacity='.1'/%3E%3Cpath fill='%23000' d='M9 6h1v1H9zM10 6h1v1h-1zM13 6h1v1h-1z'/%3E%3Cpath fill='%23000' d='M14 6h1v1h-1zM15 6h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M16 6h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M17 6h1v1h-1zM18 6h1v1h-1zM5 7h1v1H5z'/%3E%3Cpath fill='%23000' d='M6 7h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 7h1v1H7z' opacity='.1'/%3E%3Cpath fill='%23000' d='M9 7h1v1H9zM10 7h1v1h-1zM13 7h1v1h-1zM16 7h1v1h-1zM17 7h1v1h-1zM18 7h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M19 7h1v1h-1zM6 8h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 8h1v1H7z'/%3E%3Cpath fill='%23000' d='M9 8h1v1H9z' opacity='.1'/%3E%3Cpath fill='%23000' d='M10 8h1v1h-1zM13 8h1v1h-1zM16 8h1v1h-1z'/%3E%3Cpath fill='%23000' d='M17 8h1v1h-1zM18 8h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M19 8h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M20 8h1v1h-1zM18 8h1v1h-1zM17 8h1v1h-1zM18 9h1v1h-1zM17 9h1v1h-1zM18 10h1v1h-1zM17 10h1v1h-1zM18 11h1v1h-1zM17 11h1v1h-1zM17 12h1v1h-1zM17 13h1v1h-1zM17 14h1v1h-1zM6 9h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 9h1v1H7z'/%3E%3Cpath fill='%23000' d='M8 9h1v1H8z' opacity='.1'/%3E%3Cpath fill='%23000' d='M10 9h1v1h-1zM13 9h1v1h-1zM16 9h1v1h-1zM19 9h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M20 9h1v1h-1zM4 10h1v1H4z'/%3E%3Cpath fill='%23000' d='M5 10h1v1H5zM6 10h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 10h1v1H7z' opacity='.1'/%3E%3Cpath fill='%23000' d='M8 10h1v1H8z'/%3E%3Cpath fill='%23000' d='M9 10h1v1H9zM10 10h1v1h-1zM13 10h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M16 10h1v1h-1zM19 10h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M20 10h1v1h-1z'/%3E%3Cpath fill='%23000' d='M4 11h1v1H4z'/%3E%3Cpath fill='%23000' d='M5 11h1v1H5zM6 11h1v1H6z' opacity='.1'/%3E%3Cpath fill='%23000' d='M7 11h1v1H7zM8 11h1v1H8z'/%3E%3Cpath fill='%23000' d='M9 11h1v1H9zM16 11h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23fff' d='M16 11h1v1h-1zM16 12h1v1h-1zM16 13h1v1h-1zM16 14h1v1h-1zM16 15h1v1h-1zM16 16h1v1h-1zM15 16h1v1h-1zM15 17h1v1h-1zM14 17h1v1h-1zM13 17h1v1h-1zM12 17h1v1h-1zM11 17h1v1h-1zM10 17h1v1h-1zM10 16h1v1h-1zM10 15h1v1h-1zM10 14h1v1h-1zM10 13h1v1h-1zM10 12h1v1h-1zM10 11h1v1h-1zM10 10h1v1h-1zM9 10h1v1H9zM9 11h1v1H9zM9 12h1v1H9zM9 13h1v1H9zM9 14h1v1H9zM9 15h1v1H9zM8 15h1v1H8zM8 14h1v1H8zM7 14h1v1H7zM7 13h1v1H7zM7 12h1v1H7zM6 12h1v1H6zM5 12h1v1H5zM5 11h1v1H5zM6 11h1v1H6zM7 10h1v1H7zM8 9h1v1H8zM8 8h1v1H8zM8 7h1v1H8zM8 6h1v1H8zM7 6h1v1H7zM7 7h1v1H7zM6 13h1v1H6zM8 13h1v1H8zM9 16h1v1H9zM9 9h1v1H9zM9 8h1v1H9zM11 10h1v1h-1zM11 11h1v1h-1zM11 12h1v1h-1zM11 13h1v1h-1zM11 14h1v1h-1zM11 15h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM13 16h1v1h-1zM14 16h1v1h-1zM14 15h1v1h-1zM14 14h1v1h-1zM14 13h1v1h-1zM14 12h1v1h-1zM14 11h1v1h-1zM14 10h1v1h-1zM14 9h1v1h-1zM14 8h1v1h-1zM14 7h1v1h-1zM14 6h1v1h-1zM13 15h1v1h-1zM13 14h1v1h-1zM13 13h1v1h-1zM13 12h1v1h-1zM13 11h1v1h-1zM13 10h1v1h-1zM12 15h1v1h-1zM12 14h1v1h-1zM12 13h1v1h-1zM12 12h1v1h-1zM12 11h1v1h-1zM12 10h1v1h-1zM12 9h1v1h-1zM12 8h1v1h-1zM12 7h1v1h-1zM12 6h1v1h-1zM12 5h1v1h-1zM11 5h1v1h-1zM11 6h1v1h-1zM11 7h1v1h-1zM11 8h1v1h-1zM11 9h1v1h-1zM15 15h1v1h-1zM15 14h1v1h-1zM15 13h1v1h-1zM15 12h1v1h-1zM15 11h1v1h-1zM15 10h1v1h-1zM15 9h1v1h-1zM15 8h1v1h-1zM15 7h1v1h-1zM15 6h1v1h-1z'/%3E%3Cpath fill='%23000' d='M19 11h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M20 11h1v1h-1z'/%3E%3Cpath fill='%23000' d='M4 12h1v1H4z'/%3E%3Cpath fill='%23000' d='M5 12h1v1H5zM7 12h1v1H7z' opacity='.1'/%3E%3Cpath fill='%23000' d='M8 12h1v1H8z'/%3E%3Cpath fill='%23000' d='M9 12h1v1H9zM17 12h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M18 12h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M19 12h1v1h-1zM4 13h1v1H4zM3 12h1v1H3zM3 11h1v1H3z'/%3E%3Cpath fill='%23000' d='M5 13h1v1H5z'/%3E%3Cpath fill='%23000' d='M6 13h1v1H6zM8 13h1v1H8zM17 13h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M18 13h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M19 13h1v1h-1zM5 14h1v1H5z'/%3E%3Cpath fill='%23000' d='M6 14h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 14h1v1H7zM17 14h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M18 14h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M19 14h1v1h-1zM6 15h1v1H6z'/%3E%3Cpath fill='%23000' d='M7 15h1v1H7z'/%3E%3Cpath fill='%23000' d='M8 15h1v1H8z' opacity='.1'/%3E%3Cpath fill='%23000' d='M17 15h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M18 15h1v1h-1zM7 16h1v1H7z'/%3E%3Cpath fill='%23000' d='M8 16h1v1H8z'/%3E%3Cpath fill='%23000' d='M9 16h1v1H9zM16 16h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M17 16h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M18 16h1v1h-1zM7 17h1v1H7z'/%3E%3Cpath fill='%23000' d='M8 17h1v1H8zM9 17h1v1H9z'/%3E%3Cpath fill='%23000' d='M10 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M16 17h1v1h-1zM17 17h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M18 17h1v1h-1zM8 18h1v1H8z'/%3E%3Cpath fill='%23000' d='M9 18h1v1H9zM10 18h1v1h-1zM11 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM15 18h1v1h-1zM16 18h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M17 18h1v1h-1zM8 19h1v1H8z'/%3E%3Cpath fill='%23000' d='M9 19h1v1H9zM10 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM14 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M17 19h1v1h-1zM9 20h1v1H9zM10 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM13 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1z'/%3E%3C/svg%3E") 5 4, grab;
 }
 
@@ -78,71 +80,13 @@ input, input::placeholder {
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23000' d='M8 4h1v1H8zM9 4h1v1H9z'/%3E%3Cpath fill='%23fff' d='M10 4h1v1h-1zM12 4h1v1h-1zM13 3h1v1h-1zM14 3h1v1h-1z'/%3E%3Cpath fill='%23000' d='M13 4h1v1h-1zM14 4h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M15 4h1v1h-1zM8 5h1v1H8zM7 4h1v1H7zM8 3h1v1H8zM9 3h1v1H9zM9 5h1v1H9z'/%3E%3Cpath fill='%23000' d='M10 5h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M11 5h1v1h-1z'/%3E%3Cpath fill='%23000' d='M12 5h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M13 5h1v1h-1zM14 5h1v1h-1zM9 6h1v1H9zM10 6h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 6h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 6h1v1h-1zM13 6h1v1h-1zM10 7h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 7h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 7h1v1h-1zM10 8h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 8h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 8h1v1h-1zM10 9h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 9h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 9h1v1h-1zM10 10h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 10h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 10h1v1h-1zM10 11h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 11h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 11h1v1h-1zM10 12h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 12h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 12h1v1h-1zM10 13h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 13h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 13h1v1h-1zM10 14h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 14h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 14h1v1h-1zM10 15h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 15h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 15h1v1h-1zM10 16h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 16h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 16h1v1h-1zM10 17h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 17h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 17h1v1h-1zM9 18h1v1H9zM8 18h1v1H8zM7 19h1v1H7z'/%3E%3Cpath fill='%23000' d='M10 18h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 18h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M12 18h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M13 18h1v1h-1zM14 18h1v1h-1z'/%3E%3Cpath fill='%23000' d='M8 19h1v1H8zM9 19h1v1H9z'/%3E%3Cpath fill='%23fff' d='M10 19h1v1h-1zM11 18h1v1h-1zM12 19h1v1h-1z'/%3E%3Cpath fill='%23000' d='M13 19h1v1h-1zM14 19h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M15 19h1v1h-1zM9 20h1v1H9zM8 20h1v1H8zM13 20h1v1h-1zM14 20h1v1h-1z'/%3E%3C/svg%3E") 7 3, text;
 }
 
-// ::-webkit-scrollbar {
-//   background-color: #000;
-//   width: 22px;
-// }
-// ::-webkit-scrollbar-track {
-//   background: linear-gradient(
-//       45deg,
-//       #fff 25%,
-//       transparent 0,
-//       transparent 75%,
-//       #fff 0,
-//       #fff
-//     ),
-//     linear-gradient(
-//       45deg,
-//       #fff 25%,
-//       transparent 0,
-//       transparent 75%,
-//       #fff 0,
-//       #fff
-//     );
-//   background-color: #000;
-//   background-position: 0 0, 2px 2px;
-//   background-size: 4px 4px;
-//   border-left: 3px solid #fff;
-//   width: 10px;
-// }
-// ::-webkit-scrollbar-thumb {
-//   background-color: #000;
-//   border: 2px solid #fff;
-//   border-right: none;
-//   box-sizing: content-box;
-//   width: 20px;
-// }
-
-// ::-webkit-scrollbar-button:vertical:end:increment,
-// ::-webkit-scrollbar-button:vertical:start:decrement {
-//   display: block;
-// }
-// ::-webkit-scrollbar-button:vertical:start {
-//   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='22' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' stroke='%23fff' d='M.5.5h21v22.375H.5z'/%3E%3Cpath fill='%23fff' d='M1 23h20v-2H1zM1.375 12.375h5.5V11h-5.5zM6.875 17.875h6.875V16.5H6.875zM6.875 17.875v-5.5H5.5v5.5zM9.625 5.5V4.125H8.25V5.5zM11 4.125V2.75H9.625v1.375zM19.25 12.375V11h-1.375v1.375zM17.875 11V9.625H16.5V11zM16.5 9.625V8.25h-1.375v1.375zM15.125 8.25V6.875H13.75V8.25zM13.75 6.875V5.5h-1.375v1.375zM12.375 5.5V4.125H11V5.5zM8.25 6.875V5.5H6.875v1.375zM6.875 8.25V6.875H5.5V8.25zM5.5 9.625V8.25H4.125v1.375zM4.125 11V9.625H2.75V11z'/%3E%3Cpath fill='%23fff' d='M2.75 12.375V11H1.375v1.375zM15.125 17.875v-5.5H13.75v5.5zM13.75 12.375h5.5V11h-5.5z'/%3E%3C/svg%3E");
-//   background-repeat: no-repeat;
-//   height: 23.38px;
-// }
-// ::-webkit-scrollbar-button:vertical:start:active {
-//   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='22' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' stroke='%23fff' d='M.5.5h21v22.38H.5z'/%3E%3Cpath fill='%23fff' d='M1 23.005h20v-2H1zM1.375 12.378h5.5v-1.375h-5.5zM6.875 17.879h6.875V6.877H6.875zM6.875 17.879v-5.501H5.5v5.5zM9.625 5.501V4.126H8.25v1.375zM11 4.126V2.75H9.625v1.375zM19.25 12.378v-1.375h-1.375v1.375zM17.875 11.002V9.627H13.75v1.375zM16.5 9.627V8.252h-2.75v1.375zM15.125 8.252V6.877H13.75v1.375zM13.75 6.876V5.501h-1.375v1.375zM12.375 5.501V4.126h-2.75v1.375zM12.375 6.876V5.501h-5.5v1.375zM6.875 8.252V6.877H5.5v1.375zM6.875 9.627V8.252h-2.75v1.375zM6.875 11.002V9.627H2.75v1.375z'/%3E%3Cpath fill='%23fff' d='M2.75 12.378v-1.375H1.375v1.375zM15.125 17.879v-5.501H13.75v5.5zM13.75 12.378h5.5v-1.375h-5.5z'/%3E%3C/svg%3E");
-//   background-repeat: no-repeat;
-//   height: 23.38px;
-// }
-// ::-webkit-scrollbar-button:vertical:end {
-//   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='22' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' stroke='%23fff' d='M.5 22.875h21V.5H.5z'/%3E%3Cpath fill='%23fff' d='M1 .375h20v2H1zM1.375 11h5.5v1.375h-5.5zM6.875 5.5h6.875v1.375H6.875zM6.875 5.5V11H5.5V5.5zM9.625 17.875v1.375H8.25v-1.375zM11 19.25v1.375H9.625V19.25zM19.25 11v1.375h-1.375V11zM17.875 12.375v1.375H16.5v-1.375zM16.5 13.75v1.375h-1.375V13.75zM15.125 15.125V16.5H13.75v-1.375zM13.75 16.5v1.375h-1.375V16.5zM12.375 17.875v1.375H11v-1.375zM8.25 16.5v1.375H6.875V16.5zM6.875 15.125V16.5H5.5v-1.375zM5.5 13.75v1.375H4.125V13.75zM4.125 12.375v1.375H2.75v-1.375z'/%3E%3Cpath fill='%23fff' d='M2.75 11v1.375H1.375V11zM15.125 5.5V11H13.75V5.5zM13.75 11h5.5v1.375h-5.5z'/%3E%3C/svg%3E");
-//   height: 23.38px;
-// }
-// ::-webkit-scrollbar-button:vertical:end:active {
-//   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='22' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' stroke='%23fff' d='M.5 22.88h21V.5H.5z'/%3E%3Cpath fill='%23fff' d='M1 .375h20v2H1zM1.375 11.002h5.5v1.375h-5.5zM6.875 5.501h6.875v11.002H6.875zM6.875 5.501v5.501H5.5v-5.5zM9.625 17.879v1.375H8.25v-1.375zM11 19.254v1.375H9.625v-1.375zM19.25 11.002v1.375h-1.375v-1.375zM17.875 12.378v1.375H13.75v-1.375zM16.5 13.753v1.375h-2.75v-1.375zM15.125 15.128v1.375H13.75v-1.375zM13.75 16.503v1.375h-1.375v-1.375zM12.375 17.879v1.375h-2.75v-1.375zM12.375 16.503v1.375h-5.5v-1.375zM6.875 15.128v1.375H5.5v-1.375zM6.875 13.753v1.375h-2.75v-1.375zM6.875 12.378v1.375H2.75v-1.375z'/%3E%3Cpath fill='%23fff' d='M2.75 11.002v1.375H1.375v-1.375zM15.125 5.501v5.501H13.75v-5.5zM13.75 11.002h5.5v1.375h-5.5z'/%3E%3C/svg%3E");
-//   background-repeat: no-repeat;
-//   height: 23.38px;
-// }
 `
 
 const CTA = ({ image, text, link, click, ...props }) => {
   return (
     <Box
       sx={{
-        width: '140px',
+        width: ['45%', '140px', '140px', '140px', '140px'],
         height: '50px',
         background: 'dark',
         borderImage:
@@ -157,7 +101,6 @@ const CTA = ({ image, text, link, click, ...props }) => {
         color: 'white',
         transitionDuration: '300ms',
         boxShadow: '0px 3px white',
-        fontSize: '70%',
         opacity: 0,
         gap: 2,
         textDecoration: 'none',
@@ -167,7 +110,8 @@ const CTA = ({ image, text, link, click, ...props }) => {
         },
         '&:hover:not(:active)': {
           transform: 'scale(1.05)'
-        }
+        },
+        margin: ['5px 0px', '10px 5px', '10px 5px', '10px 5px', '10px 5px']
         // '&:active::before': {
         //   content: 'none'
         // }
@@ -178,7 +122,7 @@ const CTA = ({ image, text, link, click, ...props }) => {
       {...props}
     >
       <img src={image} sx={{ width: '25px' }} />
-      <Text as="h4" sx={{ textAlign: 'left' }}>
+      <Text as="a" sx={{ textAlign: 'left' }}>
         {text}
       </Text>
     </Box>
@@ -231,13 +175,14 @@ const Page = () => {
     const onScroll = () => {
       const newState = window.scrollY >= 16
       setScrolled(newState)
-      console.log("top: " + scrolled)
     }
 
     const onScroll2 = () => {
-      const newState = (window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight
+      const newState =
+        window.innerHeight + Math.ceil(window.pageYOffset) + 400 >=
+        document.body.offsetHeight
       setScrolled2(newState)
-      console.log("yay" + scrolled2)
+      console.log('yay' + Math.ceil(window.pageYOffset))
     }
 
     if (typeof window !== 'undefined') {
@@ -283,54 +228,136 @@ const Page = () => {
       })
     }
   }, [scrolled])
-  
+
   useEffect(() => {
-    if (scrolled2) {
-      anime.timeline()
-      .add({
-        targets: '#cta_top',
-        duration: 1000,
-        opacity: 0
-      })
-      .add({
-        targets: '#cta_bottom',
-        duration: 1000,
-        opacity: 1
-      }, '-=800')
+    if (window.innerWidth > '400') {
+      if (scrolled2) {
+        anime
+          .timeline()
+          .add({
+            targets: '#cta1',
+            duration: 230,
+            opacity: 0
+          })
+          .add({
+            targets: '#cta2',
+            duration: 230,
+            opacity: 0
+          })
+          .add({
+            targets: '#cta3',
+            duration: 230,
+            opacity: 0
+          })
+          .add(
+            {
+              targets: '#b-cta1',
+              duration: 210,
+              opacity: 1
+            },
+            '-=400'
+          )
+          .add({
+            targets: '#b-cta2',
+            duration: 210,
+            opacity: 1
+          })
+          .add({
+            targets: '#b-cta3',
+            duration: 210,
+            opacity: 1
+          })
+          .add({
+            targets: '#b-cta4',
+            duration: 210,
+            opacity: 1
+          })
+      } else {
+        anime
+          .timeline()
+          .add({
+            targets: '#b-cta1',
+            duration: 210,
+            opacity: 0
+          })
+          .add({
+            targets: '#b-cta2',
+            duration: 210,
+            opacity: 0
+          })
+          .add({
+            targets: '#b-cta3',
+            duration: 210,
+            opacity: 0
+          })
+          .add({
+            targets: '#b-cta4',
+            duration: 210,
+            opacity: 0
+          })
+          .add(
+            {
+              targets: '#cta1',
+              duration: 230,
+              opacity: 1
+            },
+            '-400'
+          )
+          .add({
+            targets: '#cta2',
+            duration: 230,
+            opacity: 1
+          })
+          .add({
+            targets: '#cta3',
+            duration: 230,
+            opacity: 1
+          })
+      }
     } else {
-      anime.timeline()
-      .add({
-        targets: '#cta_bottom',
-        duration: 1000,
-        opacity: 0
-      })
-      .add({
-        targets: '#cta_top',
-        duration: 1000,
-        opacity: 1
-      }, '-=800')
+      anime
+        .timeline()
+        .add({
+          targets: '#b-cta1',
+          duration: 210,
+          opacity: 1
+        })
+        .add({
+          targets: '#b-cta2',
+          duration: 210,
+          opacity: 1
+        })
+        .add({
+          targets: '#b-cta3',
+          duration: 210,
+          opacity: 1
+        })
+        .add({
+          targets: '#b-cta4',
+          duration: 210,
+          opacity: 1
+        })
     }
   }, [scrolled2])
 
-  function displayModal() {
-    document.getElementById('modal').style.display = 'flex'
+  function displayModal(id) {
+    if (typeof window !== 'undefined') {
+      document.getElementById(id).style.display = 'flex'
+    }
   }
 
-  function closeModal() {
-    document.getElementById('modal').style.display = 'none'
+  function closeModal(id) {
+    if (typeof window !== 'undefined') {
+      document.getElementById(id).style.display = 'none'
+    }
   }
-
-  // const motionProps = {
-  //   initial: { opacity: 0 },
-  //   animate: { opacity: 1 }
-  // }
 
   return (
     <>
       <Meta
         as={Head}
         title="Hackers Wanted"
-        description="TO FILL"
+        description="A love letter to hackers"
         image="https://cloud-r4rrjh2z8-hack-club-bot.vercel.app/52020-07-25_52g0nw40p2b00dh39mt93xq5ubku6yaj.jpeg"
       />
       <Nav
@@ -410,7 +437,8 @@ const Page = () => {
               maxWidth: [null, 'layout'],
               margin: 'auto',
               height: '100%',
-              transform: 'translateY(-15vh)'
+              transform: 'translateY(-15vh)',
+              marginTop: '12px'
             }}
           >
             <Box
@@ -461,7 +489,9 @@ const Page = () => {
                 borderStyle: 'solid'
               }}
             >
-              <Box sx={{ position: 'relative' }}>
+              <Box
+                sx={{ position: 'relative', textAlign: 'left', width: '100%' }}
+              >
                 <h4 sx={{ my: 0 }}>Get a physical copy of this letter:</h4>
                 <Box
                   sx={{
@@ -474,14 +504,14 @@ const Page = () => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     position: 'absolute',
-                    top: '-25px',
-                    right: '-25px',
+                    top: '-10px',
+                    right: '-10px',
                     background: 'transparent',
                     color: 'white',
                     fontSize: '1em',
                     p: '0'
                   }}
-                  onClick={closeModal}
+                  onClick={() => closeModal('modal')}
                 >
                   x
                 </Box>
@@ -581,13 +611,170 @@ const Page = () => {
                       }
                     }}
                   >
-                    ship it to me
+                    mail it to me
                   </button>
                 </form>
               </Box>
             </Box>
           </Draggable>
-
+          <Draggable>
+            <Box
+              id="modal-slack"
+              sx={{
+                display: 'none',
+                flexDirection: 'column',
+                maxWidth: '500px',
+                width: '90vw',
+                position: 'fixed',
+                marginLeft: '30%',
+                marginTop: '-15%',
+                justifyContent: 'center',
+                alignItems: 'center',
+                p: 4,
+                background: '#000',
+                color: 'white',
+                zIndex: 100,
+                borderImage:
+                  'url("https://cloud-hu95ojn44-hack-club-bot.vercel.app/0button_1.svg") 20',
+                borderWidth: '15px',
+                borderStyle: 'solid'
+              }}
+            >
+              <Box
+                sx={{ position: 'relative', textAlign: 'left', width: '100%' }}
+              >
+                <h4 sx={{ my: 0 }}>
+                  We're a global community of 25k+ high school students
+                </h4>
+                <Box as="p" sx={{ my: [2, 3] }}>
+                  Have a coding question? Looking for project feedback? You’ll
+                  find some fabulous people to talk to in our global Slack with
+                  members active at all hours.
+                </Box>
+                <a target="_blank" href="https://github.com/hackclub">
+                  <button
+                    sx={{
+                      border: 'white 2.5px solid',
+                      background: '#000',
+                      color: 'white',
+                      fontSize: '1.2em',
+                      px: 2,
+                      py: 1,
+                      mt: 2,
+                      '&:hover': {
+                        color: '#000',
+                        background: 'white'
+                      }
+                    }}
+                  >
+                    join our slack
+                  </button>
+                </a>
+                <Box
+                  sx={{
+                    fontFamily: 'Terminal_Grotesk',
+                    border: '2px solid white',
+                    width: 'fit-content',
+                    width: '20px',
+                    height: '20px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    position: 'absolute',
+                    top: '-10px',
+                    right: '-10px',
+                    background: 'transparent',
+                    color: 'white',
+                    fontSize: '1em',
+                    p: '0'
+                  }}
+                  onClick={() => closeModal('modal-slack')}
+                >
+                  x
+                </Box>
+              </Box>
+            </Box>
+          </Draggable>
+          <Draggable>
+            <Box
+              id="modal-github"
+              sx={{
+                display: 'none',
+                flexDirection: 'column',
+                maxWidth: '500px',
+                width: '90vw',
+                position: 'fixed',
+                marginLeft: '30%',
+                marginTop: '-15%',
+                justifyContent: 'center',
+                alignItems: 'center',
+                p: 4,
+                background: '#000',
+                color: 'white',
+                zIndex: 100,
+                borderImage:
+                  'url("https://cloud-hu95ojn44-hack-club-bot.vercel.app/0button_1.svg") 20',
+                borderWidth: '15px',
+                borderStyle: 'solid'
+              }}
+            >
+              <Box
+                sx={{ position: 'relative', textAlign: 'left', width: '100%' }}
+              >
+                <h4 sx={{ my: 0 }}>
+                  This letter, just like all parts of Hack Club, is fully
+                  open-sourced.
+                </h4>
+                <Box as="p" sx={{ my: [2, 3] }}>
+                  Schematics for our very own game console, code for a graphing
+                  game, this very website, and more are all public on our
+                  GitHub. And, as a 501(c)3 all of Hack Club's finances are
+                  opensourced!
+                </Box>
+                <a target="_blank" href="https://github.com/hackclub">
+                  <button
+                    sx={{
+                      border: 'white 2.5px solid',
+                      background: '#000',
+                      color: 'white',
+                      fontSize: '1.2em',
+                      px: 2,
+                      py: 1,
+                      mt: 2,
+                      '&:hover': {
+                        color: '#000',
+                        background: 'white'
+                      }
+                    }}
+                  >
+                    github.com/hackclub
+                  </button>
+                </a>
+                <Box
+                  sx={{
+                    fontFamily: 'Terminal_Grotesk',
+                    border: '2px solid white',
+                    width: 'fit-content',
+                    width: '20px',
+                    height: '20px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    position: 'absolute',
+                    top: '-10px',
+                    right: '-10px',
+                    background: 'transparent',
+                    color: 'white',
+                    fontSize: '1em',
+                    p: '0'
+                  }}
+                  onClick={() => closeModal('modal-github')}
+                >
+                  x
+                </Box>
+              </Box>
+            </Box>
+          </Draggable>
           <Box
             sx={{
               width: '90vw',
@@ -599,46 +786,38 @@ const Page = () => {
               sx={{
                 flexDirection: 'column',
                 position: 'sticky',
-                gap: 2,
+                gap: 4,
                 width: 'fit-content',
                 float: 'right',
                 top: '50px',
                 right: 0,
-                zIndex: 4
+                zIndex: 4,
+                display: ['none', 'none', 'block', 'block', 'block']
               }}
-              id="cta_top"
             >
               <CTA
-                image="https://cloud-e59dqvwx6-hack-club-bot.vercel.app/0new_piskel-2.png__1_.png"
-                text="sign "
-                onClick={() => {
-                  signIn('github')
-                  sign()
-                }}
-                id="cta1"
-              />
-              <CTA
                 image="https://cloud-178z6geau-hack-club-bot.vercel.app/0new_piskel-3.png__1_.png"
-                text="ship a copy"
-                id="cta2"
-                onClick={() => displayModal()}
+                text="get a paper copy"
+                id="cta1"
+                onClick={() => displayModal('modal')}
               />
               <CTA
                 image="https://cloud-gbwqdsj6z-hack-club-bot.vercel.app/0new_piskel-4.png.png"
-                text="meet other hackers"
-                id="cta3"
+                text="join our community"
+                id="cta2"
+                onClick={() => displayModal('modal-slack')}
               />
               <CTA
                 image="https://cloud-h1dl2nqn7-hack-club-bot.vercel.app/0new_piskel-5.png.png"
-                text="open source"
-                id="cta4"
-                link="https://github.com/hackclub"
+                text="fully open sourced!"
+                id="cta3"
+                onClick={() => displayModal('modal-github')}
               />
             </Flex>
             <Box
               id="letter"
               sx={{
-                maxWidth: '700px',
+                maxWidth: ['400px', '450px', '550px', '600px', '700px'],
                 width: '100%',
                 position: 'relative',
                 pb: 5,
@@ -649,17 +828,20 @@ const Page = () => {
             >
               <Fade cascade>
                 <Flex>
-                  <Box as="p" sx={{fontStyle: 'italic'}}>Reading time: 8 minutes</Box>
+                  <Box as="p" sx={{ fontStyle: 'italic', opacity: 0.6 }}>
+                    Reading time: 8 minutes
+                  </Box>
                 </Flex>
-                <Box as="p" sx={{fontStyle: 'italic'}}>
+                <Box as="p" sx={{ fontStyle: 'italic' }}>
                   Some people are allergic to unthinking rules and outdated
                   systems. They want the world to be better, more magical, more
                   free. Some also have the creative energy to do something about
                   it—without the need for instructions, and without needing to
-                  be asked. These people are hackers. This is our love letter to
-                  them, on behalf of a society that’s long failed them.
+                  be asked. <b>These people are hackers.</b> This is our love
+                  letter to them, on behalf of a society that’s long failed
+                  them.
                 </Box>
-                <hr sx={{opacity: '0.7 !important', my: 4}}></hr>
+                <hr sx={{ opacity: '0.7 !important', my: 4 }}></hr>
                 <Box as="p">
                   Some of us have always been overlooked, misunderstood,
                   underappreciated; looked at with wariness instead of wonder;
@@ -675,7 +857,7 @@ const Page = () => {
 
                 <img
                   src="https://cloud-ip4cwk059-hack-club-bot.vercel.app/1dither_it_189933158-9f00ceaf-7f61-4bef-9911-4cf4a14e0e4d__2_.png"
-                  sx={{ width: '100%' }}
+                  sx={{ width: '100%', my: [3, 4] }}
                 />
 
                 <Box as="p">
@@ -725,7 +907,7 @@ const Page = () => {
 
                 <img
                   src="https://cloud-bn2bhadx4-hack-club-bot.vercel.app/0dither_it_screenshot_2023-04-26_at_5.43.45_pm.png"
-                  sx={{ width: '100%' }}
+                  sx={{ width: '100%', my: [3, 4] }}
                 />
 
                 <Box as="h4">Why?</Box>
@@ -789,7 +971,7 @@ const Page = () => {
 
                 <img
                   src="https://cloud-ip4cwk059-hack-club-bot.vercel.app/0download.png"
-                  sx={{ width: '100%' }}
+                  sx={{ width: '100%', my: [3, 4] }}
                 />
 
                 <Box as="p">
@@ -862,9 +1044,9 @@ const Page = () => {
 
                 <img
                   src="https://cloud-diy7ga468-hack-club-bot.vercel.app/0dither_it_hack_club_assemble_ltnj_02199.jpg"
-                  sx={{ width: '100%' }}
+                  sx={{ width: '100%', my: [3, 4] }}
                 />
-                
+
                 <Box as="h4">If we don’t support hackers, we don’t grow.</Box>
                 <Box as="p">
                   Coding is an actual superpower. It turns people from consumers
@@ -937,7 +1119,7 @@ const Page = () => {
 
                 <img
                   src="https://cloud-perha612p-hack-club-bot.vercel.app/0dither_it_img_5673.jpg"
-                  sx={{ width: '100%' }}
+                  sx={{ width: '100%', my: [3, 4] }}
                 />
 
                 <Box as="p">
@@ -1007,48 +1189,51 @@ const Page = () => {
                   hackers.map((e, index) => (
                     <Hack
                       delay={300 + index * 50}
-                      sx={{ opacity: `${index == 0 ? 1 : 5 / index}` }}
+                      sx={{ opacity: `${index == 0 ? 1 : 3 / index}` }}
                     >
                       {e.fields.username}
                     </Hack>
                   ))}
               </Flex>
               <Flex
-              id="cta_bottom"
                 sx={{
                   flexDirection: 'row',
+                  flexWrap: 'wrap',
                   position: 'relative',
                   gap: 2,
                   width: '100%',
-                  mt: 3,
-                  right: 0
+                  mt: 4,
+                  right: 0,
+                  display: ['']
                 }}
               >
                 <CTA
                   image="https://cloud-e59dqvwx6-hack-club-bot.vercel.app/0new_piskel-2.png__1_.png"
-                  text="sign "
+                  text="sign your name!"
                   onClick={() => {
                     signIn('github')
                     sign()
                   }}
-                  id="cta1"
+                  id="b-cta1"
+                  // sx={{width: [null, '180px !important', '180px !important', '180px !important', '180px !important']}}
                 />
                 <CTA
                   image="https://cloud-178z6geau-hack-club-bot.vercel.app/0new_piskel-3.png__1_.png"
-                  text="ship a copy"
-                  id="cta2"
-                  onClick={() => displayModal()}
+                  text="paper copy"
+                  id="b-cta2"
+                  onClick={() => displayModal('modal')}
                 />
                 <CTA
                   image="https://cloud-gbwqdsj6z-hack-club-bot.vercel.app/0new_piskel-4.png.png"
-                  text="meet other hackers"
-                  id="cta3"
+                  text="join us"
+                  id="b-cta3"
+                  onClick={() => displayModal('modal-slack')}
                 />
                 <CTA
                   image="https://cloud-h1dl2nqn7-hack-club-bot.vercel.app/0new_piskel-5.png.png"
-                  text="open source"
-                  id="cta4"
-                  link="https://github.com/hackclub"
+                  text="open sourced!"
+                  id="b-cta4"
+                  onClick={() => displayModal('modal-github')}
                 />
               </Flex>
               {/* </Fade> */}
@@ -1061,125 +1246,4 @@ const Page = () => {
     </>
   )
 }
-
-// const asyncTimeout = (ms) => {
-//   return new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve('resolved')
-//     }, ms);
-//   });
-// };
-
-// let i = 0;
-
-// async function getThings() {
-//   for (let i = 0; i < text.length; i++) {
-//     para = document.createElement('p')
-//     let e = text[i].innerHTML
-
-//     function typeWriter() {
-//       if (a < e.length) {
-//         para.innerHTML += e.charAt(a)
-//         console.log('typing...')
-//         setTimeout(typeWriter, speed)
-//         a++
-//       }
-//     }
-//     typeWriter()
-//     await asyncTimeout(text.length * speed)
-//     group.appendChild(para)
-//   }
-// }
-
-// getThings()
-
-// console.log(text)
-
-// console.log(text.length)
-
-// console.log(text[1].innerHTML)
-
-// let e = text[1].innerHTML
-
-// function typeWriter() {
-//   console.log(e.length)
-//   if (a < e.length) {
-//     para.innerHTML += e.charAt(a)
-//     console.log('typing...')
-//     setTimeout(typeWriter, speed)
-//     a++
-//   }
-// }
-
-// typeWriter()
-// promise set timeout with the length
-
-//   }
-
-// useEffect(() => {
-//   var speed = 5
-//   let a = 0
-
-//   let para
-//   let text
-//   let group
-
-//   if (typeof window !== 'undefined') {
-//     text = document.querySelectorAll('.css-l11det')
-//     group = document.getElementById('text')
-//     para = document.createElement('p')
-//   }
-
-//   function asyncTimeout(ms) {
-//     return new Promise(resolve => {
-//       setTimeout(() => {
-//         resolve('yay')
-//       }, ms)
-//     })
-//   }
-
-//   function typeWriter(e) {
-//     console.log('it lives!')
-//     if (a < e.length) {
-//       para.innerHTML += e.charAt(a)
-//       console.log('hi')
-//       setTimeout(typeWriter, speed, e)
-//       a++
-//     }
-//   }
-
-//   async function things() {
-//     for (let i = 0; i < text.length; i++) {
-//       console.log(i)
-//       para = document.createElement('p')
-//       let e = text[i].innerHTML
-//       a = 0
-//       typeWriter(e)
-//       console.log('hi')
-//       group.appendChild(para)
-//       await asyncTimeout(e.length * speed * 1.6)
-//     }
-//   }
-
-//   things()
-// }, [])
-
-// useEffect(() => {
-//   function resolveAfter2Seconds(x) {
-//     return new Promise((resolve) => {
-//       setTimeout(() => {
-//         resolve(x);
-//       }, 2000);
-//     });
-//   }
-
-//   async function f1() {
-//     console.log('hii');
-//     await resolveAfter2Seconds(10);
-//     console.log('hi'); // 10
-//   }
-
-//   f1();
-// })
-
 export default Page
