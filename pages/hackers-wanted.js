@@ -21,7 +21,7 @@ import Footer from '../components/footer'
 import { keyframes } from '@emotion/react'
 import Hackers from '../components/hackers-wanted/letter.mdx'
 import ForceTheme from '../components/force-theme'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import anime from 'animejs/lib/anime.es.js'
 import Fade from 'react-reveal/Fade'
 import useSWR from 'swr'
@@ -65,6 +65,7 @@ a, p, ol {
   font-family: Space_Grotesk;
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23000' d='M8 4h1v1H8zM9 4h1v1H9z'/%3E%3Cpath fill='%23fff' d='M10 4h1v1h-1zM12 4h1v1h-1zM13 3h1v1h-1zM14 3h1v1h-1z'/%3E%3Cpath fill='%23000' d='M13 4h1v1h-1zM14 4h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M15 4h1v1h-1zM8 5h1v1H8zM7 4h1v1H7zM8 3h1v1H8zM9 3h1v1H9zM9 5h1v1H9z'/%3E%3Cpath fill='%23000' d='M10 5h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M11 5h1v1h-1z'/%3E%3Cpath fill='%23000' d='M12 5h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M13 5h1v1h-1zM14 5h1v1h-1zM9 6h1v1H9zM10 6h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 6h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 6h1v1h-1zM13 6h1v1h-1zM10 7h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 7h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 7h1v1h-1zM10 8h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 8h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 8h1v1h-1zM10 9h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 9h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 9h1v1h-1zM10 10h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 10h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 10h1v1h-1zM10 11h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 11h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 11h1v1h-1zM10 12h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 12h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 12h1v1h-1zM10 13h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 13h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 13h1v1h-1zM10 14h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 14h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 14h1v1h-1zM10 15h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 15h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 15h1v1h-1zM10 16h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 16h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 16h1v1h-1zM10 17h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 17h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M12 17h1v1h-1zM9 18h1v1H9zM8 18h1v1H8zM7 19h1v1H7z'/%3E%3Cpath fill='%23000' d='M10 18h1v1h-1z'/%3E%3Cpath fill='%23000' d='M11 18h1v1h-1z' opacity='.1'/%3E%3Cpath fill='%23000' d='M12 18h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M13 18h1v1h-1zM14 18h1v1h-1z'/%3E%3Cpath fill='%23000' d='M8 19h1v1H8zM9 19h1v1H9z'/%3E%3Cpath fill='%23fff' d='M10 19h1v1h-1zM11 18h1v1h-1zM12 19h1v1h-1z'/%3E%3Cpath fill='%23000' d='M13 19h1v1h-1zM14 19h1v1h-1z'/%3E%3Cpath fill='%23fff' d='M15 19h1v1h-1zM9 20h1v1H9zM8 20h1v1H8zM13 20h1v1h-1zM14 20h1v1h-1z'/%3E%3C/svg%3E") 7 3, text;
   line-height: 1.4;
+  color: inherit;
 }
 
 button, a {
@@ -151,7 +152,7 @@ const Page = () => {
   const { data: hackers } = useSWR(
     'https://airbridge.hackclub.com/v0.1/Hackers%20Wanted/hackers',
     fetcher,
-    { refreshInterval: 1000 }
+    { refreshInterval: 10000 }
   )
 
   const { data: session, status } = useSession()
@@ -171,6 +172,34 @@ const Page = () => {
     }
   }
 
+  const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const formRef = useRef(null)
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+
+    await fetch('/api/address', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        Username: e.target.Name.value,
+          Email: e.target.Address1.value
+        // Name: e.target.Name.value,
+        // Address1: e.target.Address1.value,
+        // Address2: e.target.Address2.value,
+        // City: e.target.City.value,
+        // State: e.target.State.value,
+        // Postal: e.target.Postal.value,
+        // Country: e.target.Country.value
+      })
+    })
+
+    formRef.current.reset()
+    setSubmitted(true)
+  }
   useEffect(() => {
     const onScroll = () => {
       const newState = window.scrollY >= 16
@@ -515,10 +544,11 @@ const Page = () => {
                 >
                   x
                 </Box>
-                <form
-                  action="https://airtable-forms-proxy.hackclub.dev/api/appdPydXlWO2ZAhhV/address?redirect=https://site-git-hw.hackclub.dev/hackers-wanted"
-                  id="form"
-                  method="POST"
+                <Box
+                  as="form"
+                  ref={formRef}
+                  onSubmit={handleSubmit}
+                  gap={[2, 3]}
                 >
                   <Box sx={{ my: 2 }}>
                     <label>Name:</label>
@@ -539,7 +569,7 @@ const Page = () => {
                       name="Address1"
                       placeholder="15 Hacks Rd"
                       sx={{ ml: 2 }}
-                      required
+                      // required
                     />
                   </Box>
                   <Box sx={{ my: 2 }}>
@@ -560,7 +590,7 @@ const Page = () => {
                         id="City"
                         name="City"
                         placeholder="Makertown"
-                        required
+                        // required
                       />
                     </Flex>
                     <Flex sx={{ flexDirection: 'column' }}>
@@ -570,7 +600,7 @@ const Page = () => {
                         id="State"
                         name="State"
                         placeholder="Makertown"
-                        required
+                        // required
                       />
                     </Flex>
                   </Flex>
@@ -582,7 +612,7 @@ const Page = () => {
                         id="Postal"
                         name="Postal"
                         placeholder="4225"
-                        required
+                        // required
                       />
                     </Flex>
                     <Flex sx={{ flexDirection: 'column' }}>
@@ -592,11 +622,30 @@ const Page = () => {
                         id="Country"
                         name="Country"
                         placeholder="United States"
-                        required
+                        // required
                       />
                     </Flex>
                   </Flex>
+                  {/* <button
+                    sx={{
+                      border: 'white 2.5px solid',
+                      background: '#000',
+                      color: 'white',
+                      fontSize: '1.2em',
+                      px: 2,
+                      py: 1,
+                      mt: 2,
+                      '&:hover': {
+                        color: '#000',
+                        background: 'white'
+                      }
+                    }}
+                  >
+                    mail it to me
+                  </button> */}
+
                   <button
+                    type="submit"
                     sx={{
                       border: 'white 2.5px solid',
                       background: '#000',
@@ -613,7 +662,13 @@ const Page = () => {
                   >
                     mail it to me
                   </button>
-                </form>
+                  {submitted && (
+                    <Box variant="primary" sx={{ bg: 'green', mt: [2, 3] }}>
+                      <Icon glyph="send" />
+                      <Text sx={{ ml: 2 }}>Signed up!</Text>
+                    </Box>
+                  )}
+                </Box>
               </Box>
             </Box>
           </Draggable>
@@ -644,12 +699,12 @@ const Page = () => {
                 sx={{ position: 'relative', textAlign: 'left', width: '100%' }}
               >
                 <h4 sx={{ my: 0 }}>
-                  We're a global community of 25k+ high school students
+                  We hackers need a home, Hack Club could be that for you.
                 </h4>
                 <Box as="p" sx={{ my: [2, 3] }}>
-                  Have a coding question? Looking for project feedback? You’ll
-                  find some fabulous people to talk to in our global Slack with
-                  members active at all hours.
+                  Be part of 25k+ high school students that love building on our
+                  global Slack. Have a coding question? Looking for project
+                  feedback? Want to debate the superiority of tabs vs spaces?
                 </Box>
                 <a target="_blank" href="https://github.com/hackclub">
                   <button
@@ -726,10 +781,22 @@ const Page = () => {
                   open-sourced.
                 </h4>
                 <Box as="p" sx={{ my: [2, 3] }}>
-                  Schematics for our very own game console, code for a graphing
-                  game, this very website, and more are all public on our
-                  GitHub. And, as a 501(c)3 all of Hack Club's finances are
-                  opensourced!
+                  This means that the schematics for our{' '}
+                  <a href="https://github.com/hackclub/sprig">game console</a>,{' '}
+                  <a href="https://github.com/hackclub/putting-the-you-in-cpu">
+                    {' '}
+                    a deep dive into how programs run
+                  </a>
+                  ,{' '}
+                  <a href="https://github.com/hackclub/site">
+                    this very website
+                  </a>
+                  , and more are all public on our GitHub. Come join us to build
+                  .
+                </Box>
+                <Box as="p" sx={{ fontSize: 'smaller', fontStyle: 'italic' }}>
+                  P.S As a nonprofit, even our finances are
+                  <a href="https://bank.hackclub.com/hq">transparent</a>!
                 </Box>
                 <a target="_blank" href="https://github.com/hackclub">
                   <button
@@ -1219,19 +1286,19 @@ const Page = () => {
                 />
                 <CTA
                   image="https://cloud-178z6geau-hack-club-bot.vercel.app/0new_piskel-3.png__1_.png"
-                  text="paper copy"
+                  text="get a paper copy"
                   id="b-cta2"
                   onClick={() => displayModal('modal')}
                 />
                 <CTA
                   image="https://cloud-gbwqdsj6z-hack-club-bot.vercel.app/0new_piskel-4.png.png"
-                  text="join us"
+                  text="join our community"
                   id="b-cta3"
                   onClick={() => displayModal('modal-slack')}
                 />
                 <CTA
                   image="https://cloud-h1dl2nqn7-hack-club-bot.vercel.app/0new_piskel-5.png.png"
-                  text="open sourced!"
+                  text="fully open sourced!"
                   id="b-cta4"
                   onClick={() => displayModal('modal-github')}
                 />

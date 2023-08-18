@@ -7,7 +7,6 @@ const joinTable = new AirtablePlus({
 })
 
 async function postData(url = '', data = {}, headers = {}) {
-  console.log(data)
   const response = await fetch(url, {
     method: 'POST',
     mode: 'cors',
@@ -65,6 +64,7 @@ export default async function handler(req, res) {
     Reason: data.reason,
     Invited: !waitlist,
     Club: data.club ? data.club : '',
+    Event: data.event ? data.event : '',
     IP: req.headers['x-forwarded-for'] || req.socket.remoteAddress
   })
 
@@ -78,16 +78,16 @@ export default async function handler(req, res) {
         teen: !isAdult,
         educationLevel: data.educationLevel,
         reason: data.reason,
+        event: data.event,
         userAgent: req.headers['user-agent']
       },
       { authorization: `Bearer ${process.env.TORIEL_KEY}` }
     )
-    console.log(result)
     res.json({ status: 'success', message: 'You’ve been invited to Slack!' })
   } else {
     res.json({
       status: 'success',
       message: 'Your request will be reviewed soon.'
     })
-  1
+  }
 }
