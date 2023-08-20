@@ -1,0 +1,33 @@
+/*! system.css v0.1.11 - https://github.com/sakofchit/system.css */
+@font-face {
+    font-family: Chicago;
+    src: url(https://cloud-1w9dtunrs-hack-club-bot.vercel.app/0chicagoflf.woff) format('woff');
+  }
+  @font-face {
+    font-family: Monaco;
+    src: url(https://cloud-mfs6bhw8p-hack-club-bot.vercel.app/0monaco.woff) format('woff');
+  }
+  @font-face {
+    font-family: Chicago_12;
+    src: url(https://cloud-mfs6bhw8p-hack-club-bot.vercel.app/2chikarego2.woff) format('woff');
+  }
+  @font-face {
+    font-family: Geneva_9;
+    src: url(https://cloud-mfs6bhw8p-hack-club-bot.vercel.app/1finderskeepers.woff) format('woff');
+  }
+  
+  @font-face {
+    font-family: Redaction;
+    src: url(https://cloud-a1btd0ouf-hack-club-bot.vercel.app/0redaction-regular.woff2) format(woff2);
+  }
+  
+  @font-face {
+    font-family: Space_Grotesk;
+    src: url(https://cloud-lrrf7ozlc-hack-club-bot.vercel.app/0spacegrotesk_wght_.woff2) format('woff2');
+  }
+  
+  @font-face {
+    font-family: Terminal_Grotesk;
+    src: url("https://type.cargo.site/files/TerminalGrotesque.woff") format("woff");
+  }
+  
