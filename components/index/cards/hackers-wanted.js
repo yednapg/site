@@ -15,16 +15,16 @@ export default function HackersWanted() {
     <CardModel
       color="white"
       sx={{
-        backgroundSize: 'cover',
         backgroundColor: '#17171d',
         backgroundRepeat: 'repeat',
-        background: 'radial-gradient(#fff 1px,transparent 1px)',
-        backgroundSize: '24px 24px'
+        background: '#000',
+        backgroundImage: 'radial-gradient(#fff 1px,transparent 1px)',
+        backgroundSize: '24px 24px !important'
       }}
       position={[null, 'bottom', 'bottom']}
       highlight="#ffffff"
     >
-      <Text as="h3" sx={{ fontSize: '0.9em' }}>
+      <Text as="h3">
         Hackers Wanted
       </Text>
       <Grid columns={[1, '1fr 0.4fr']}>
@@ -34,7 +34,7 @@ export default function HackersWanted() {
             variant="subtitle"
             sx={{ zIndex: 2, position: 'relative' }}
           >
-            An 8 minute expression of what it means to be a "hacker".
+            What does it mean to be a hacker? An expression of our philosophy.
           </Text>
           <Text
             as="p"
@@ -45,11 +45,10 @@ export default function HackersWanted() {
             They want the world to be better, more magical, more free. Some also
             have the creative energy to do something about it—without the need
             for instructions, and without needing to be asked. These people are
-            hackers. This is our love letter to them, on behalf of a society
-            that’s long failed them.
+            hackers...
           </Text>
         </Box>
-        <Box>
+        <Box sx={{alignItems: 'end'}}>
           <Flex
             sx={{
               flexDirection: 'column',
@@ -63,10 +62,11 @@ export default function HackersWanted() {
               href="/hackers-wanted"
               target="_blank"
               rel="noopener"
-              primary="#484137"
+              primary="#fff"
               id="48"
+              sx={{color: "#000"}}
             >
-              Read more...
+              Read more
             </Buttons>
           </Flex>
         </Box>
