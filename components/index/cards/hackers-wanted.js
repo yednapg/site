@@ -5,7 +5,7 @@ import Buttons from './button'
 /** @jsxImportSource theme-ui */
 
 const styled = `
-h3 {
+h9 {
     font-family: Terminal_Grotesk;
 }
 `
@@ -24,7 +24,7 @@ export default function HackersWanted() {
       position={[null, 'bottom', 'bottom']}
       highlight="#ffffff"
     >
-      <Text as="h3">
+      <Text as="h9" sx={{ fontSize: ['36px', '32px', '42px', '48px'] }}>
         Hackers Wanted
       </Text>
       <Grid columns={[1, '1fr 0.4fr']}>
@@ -48,7 +48,7 @@ export default function HackersWanted() {
             hackers...
           </Text>
         </Box>
-        <Box sx={{alignItems: 'end'}}>
+        <Box sx={{ alignItems: 'end' }}>
           <Flex
             sx={{
               flexDirection: 'column',
@@ -64,7 +64,7 @@ export default function HackersWanted() {
               rel="noopener"
               primary="#fff"
               id="48"
-              sx={{color: "#000"}}
+              sx={{ color: '#000' }}
             >
               Read more
             </Buttons>
