@@ -232,10 +232,8 @@ function Page({
                   }}
                 >
                   <Text
-                    onClick={() => {
-                      setHover(false)
-                      !reveal ? setReveal(true) : setReveal(false)
-                    }}
+                  as="a"
+                  href="/hackers-wanted"
                     sx={{
                       // lineHeight: 0.875,
                       px: 2,
@@ -346,7 +344,7 @@ function Page({
               in-person to make things with code. Whether you’re a beginner
               programmer or have years of experience, there’s a place for you at
               Hack&nbsp;Club. Read about our{' '}
-              <Link href="/philosophy" target="_blank" rel="noopener">
+              <Link href="/hackers-wanted" target="_blank" rel="noopener">
                 hacker ethic
               </Link>
               .
