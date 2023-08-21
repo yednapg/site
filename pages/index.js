@@ -38,6 +38,7 @@ import GitHub from '../components/index/github'
 import Photo from '../components/photo'
 import Comma from '../components/comma'
 import Haxidraw from '../components/index/cards/haxidraw'
+import HackersWanted from '../components/index/cards/hackers-wanted'
 
 /** @jsxImportSource theme-ui */
 
@@ -636,6 +637,7 @@ function Page({
             </Box>
             <Outernet />
             <Slack slackKey={slackKey} data={slackData} events={events} />
+            <HackersWanted />
           </Box>
         </Box>
         <Box>

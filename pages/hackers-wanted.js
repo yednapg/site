@@ -630,24 +630,6 @@ const Page = () => {
                       />
                     </Flex>
                   </Flex>
-                  {/* <button
-                      sx={{
-                        border: 'white 2.5px solid',
-                        background: '#000',
-                        color: 'white',
-                        fontSize: '1.2em',
-                        px: 2,
-                        py: 1,
-                        mt: 2,
-                        '&:hover': {
-                          color: '#000',
-                          background: 'white'
-                        }
-                      }}
-                    >
-                      mail it to me
-                    </button> */}
-
                   <button
                     type="submit"
                     sx={{
