@@ -15,11 +15,10 @@ export default function HackersWanted() {
     <CardModel
       color="white"
       sx={{
-        backgroundColor: '#17171d',
         backgroundRepeat: 'repeat',
-        background: '#000',
-        backgroundImage: 'radial-gradient(#fff 1px,transparent 1px)',
-        backgroundSize: '24px 24px !important'
+        background: '#17171d',
+        backgroundImage: 'radial-gradient(#bdffffff 1px,transparent 1px)',
+        backgroundSize: '24px 24px !important',
       }}
       position={[null, 'bottom', 'bottom']}
       highlight="#ffffff"
@@ -32,7 +31,7 @@ export default function HackersWanted() {
           <Text
             as="p"
             variant="subtitle"
-            sx={{ zIndex: 2, position: 'relative' }}
+            sx={{ zIndex: 2, position: 'relative', fontWeight: '700' }}
           >
             What does it mean to be a hacker? An expression of our philosophy.
           </Text>
@@ -48,7 +47,7 @@ export default function HackersWanted() {
             hackers...
           </Text>
         </Box>
-        <Box sx={{ alignItems: 'end' }}>
+        <Box sx={{ alignItems: 'end', height: '100%' }}>
           <Flex
             sx={{
               flexDirection: 'column',
