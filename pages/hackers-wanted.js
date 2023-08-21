@@ -178,8 +178,31 @@ const Page = () => {
   const [submitted, setSubmitted] = useState(false)
   const formRef = useRef(null)
 
+  const Loading = () => (
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%',
+        width: '100%',
+        border: '2px solid #f3f3f3',
+        borderTop: '2px solid #ffffff',
+        borderRadius: '50%',
+        width: '10px',
+        height: '10px',
+        animation: 'spin 2s linear infinite',
+        '@keyframes spin': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' }
+        }
+      }}
+    ></Box>
+  )
+
   const handleSubmit = async e => {
     e.preventDefault()
+    setSubmitting(true)
 
     await fetch('/api/address/', {
       method: 'POST',
@@ -198,7 +221,9 @@ const Page = () => {
     })
 
     formRef.current.reset()
+    setSubmitting(false)
     setSubmitted(true)
+    console.log(submitted)
   }
   useEffect(() => {
     const onScroll = () => {
@@ -405,7 +430,7 @@ const Page = () => {
           },
           '& .css-6k4y3p': {
             backgroundImage:
-              'url("https://cloud-7fhx9zewb-hack-club-bot.vercel.app/0new_piskel-3.png.png")',
+              'url("https://cloud-7fhx9zewb-hack-club-bot.vercel.app/0new_piskel-3.png.png")'
           }
         }}
         dark="dark"
@@ -471,7 +496,7 @@ const Page = () => {
               margin: 'auto',
               height: '100%',
               transform: 'translateY(-15vh)',
-              marginTop: '12px'
+              marginTop: '32px'
             }}
           >
             <Box
@@ -646,15 +671,33 @@ const Page = () => {
                       }
                     }}
                   >
-                    mail it to me
+                    {submitting ? (
+                      <>
+                        <Loading />
+                        &nbsp;mail it to me
+                      </>
+                    ) : (
+                      'mail it to me'
+                    )}
                   </button>
                   {submitted && (
                     <Box
                       variant="primary"
-                      sx={{ color: '#000', background: 'white', display: 'flex', alignItems: 'center', mt: 3 }}
+                      sx={{
+                        color: '#000',
+                        background: 'white',
+                        display: 'flex',
+                        alignItems: 'center',
+                        mt: 3
+                      }}
                     >
-                      <img src="https://cloud-1hwxunix7-hack-club-bot.vercel.app/0pixil-frame-0__3_.png" sx={{width: '30px', height: 'auto', p: 1}} />
-                      <Text sx={{ ml: 2, fontWeight: '700' }} as="p">Mail is on it's way!</Text>
+                      <img
+                        src="https://cloud-1hwxunix7-hack-club-bot.vercel.app/0pixil-frame-0__3_.png"
+                        sx={{ width: '30px', height: 'auto', p: 1 }}
+                      />
+                      <Text sx={{ ml: 2, fontWeight: '700' }} as="p">
+                        On it's way!
+                      </Text>
                     </Box>
                   )}
                 </Box>
