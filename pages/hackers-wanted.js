@@ -27,7 +27,6 @@ import useSWR from 'swr'
 import fetcher from '../lib/fetcher'
 import { useSession, getSession, signIn, signOut } from 'next-auth/react'
 import Draggable from 'react-draggable'
-
 /** @jsxImportSource theme-ui */
 
 // cursor credits to https://linear.app/change
@@ -460,11 +459,11 @@ const Page = () => {
             backgroundRepeat: 'repeat',
             width: '100vw',
             textAlign: 'center',
-            height: '45vh',
+            height: ['50vh', '45vh', '45vh', '45vh'],
             background: 'radial-gradient(#fff 1px,transparent 1px)',
             backgroundSize: '24px 24px',
             position: 'sticky',
-            top: '-44vh',
+            top: ['-50vh', '-44vh', '-44vh', '-44vh'],
             mb: 4,
             zIndex: 3,
             '&::before': {
@@ -496,7 +495,7 @@ const Page = () => {
               margin: 'auto',
               height: '100%',
               transform: 'translateY(-15vh)',
-              marginTop: '32px'
+              marginTop: '12px'
             }}
           >
             <Box
@@ -713,8 +712,8 @@ const Page = () => {
                 maxWidth: '500px',
                 width: '90vw',
                 position: 'fixed',
-                marginLeft: '30%',
-                marginTop: '-15%',
+                marginLeft: '35vw',
+                marginTop: '-15vh',
                 justifyContent: 'center',
                 alignItems: 'center',
                 p: 4,
@@ -791,8 +790,8 @@ const Page = () => {
                 maxWidth: '500px',
                 width: '90vw',
                 position: 'fixed',
-                marginLeft: '30%',
-                marginTop: '-15%',
+                marginLeft: '35vw',
+                marginTop: ['-40vh', '-15vh', '-15vh', '-15vh'],
                 justifyContent: 'center',
                 alignItems: 'center',
                 p: 4,
@@ -827,7 +826,7 @@ const Page = () => {
                   .
                 </Box>
                 <Box as="p" sx={{ fontSize: 'smaller', fontStyle: 'italic' }}>
-                  P.S As a nonprofit, even our finances are
+                  P.S As a nonprofit, even our finances are{' '}
                   <a href="https://bank.hackclub.com/hq">transparent</a>!
                 </Box>
                 <a target="_blank" href="https://github.com/hackclub">
@@ -1316,7 +1315,11 @@ const Page = () => {
                       opacity: '0.5 !important',
                       '&:hover': {
                         transform: 'none !important'
-                      }
+                      },
+                      '&:active': {
+                        transform: 'none',
+                        boxShadow: '0px 3px white',
+                      },
                     }}
                   />
                 ) : (

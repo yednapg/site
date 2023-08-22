@@ -17,7 +17,7 @@ export default function HackersWanted() {
       sx={{
         backgroundRepeat: 'repeat',
         background: '#17171d',
-        backgroundImage: 'radial-gradient(#bdffffff 1px,transparent 1px)',
+        backgroundImage: 'radial-gradient(rgb(255, 255, 255, 0.4) 1px,transparent 1px)',
         backgroundSize: '24px 24px !important',
       }}
       position={[null, 'bottom', 'bottom']}
@@ -47,13 +47,14 @@ export default function HackersWanted() {
             hackers...
           </Text>
         </Box>
-        <Box sx={{ alignItems: 'end', height: '100%' }}>
+        <Box>
           <Flex
             sx={{
               flexDirection: 'column',
-              mt: [3, 3, 4],
+              // mt: [3, 3, 4],
               alignItems: 'end',
-              justifyContent: 'flex-end'
+              justifyContent: 'flex-end',
+              height: '100%'
             }}
           >
             <Buttons
@@ -63,7 +64,7 @@ export default function HackersWanted() {
               rel="noopener"
               primary="#fff"
               id="48"
-              sx={{ color: '#000' }}
+              sx={{ color: '#17171d' }}
             >
               Read more
             </Buttons>
