@@ -410,7 +410,7 @@ const Page = () => {
       <Meta
         as={Head}
         title="Hackers Wanted"
-        description="A love letter to those that want the world to be better, more magical, more free"
+        description="A love letter to those that want the world to be better, more magical, more free."
         image="https://cloud-perha612p-hack-club-bot.vercel.app/0dither_it_img_5673.jpg"
       />
       <Nav
