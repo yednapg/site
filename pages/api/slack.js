@@ -13,10 +13,10 @@ export async function Slack() {
     "https://hackclub.slack.com/api/team.stats.timeSeries",
     {
       method: "POST",
-      body: `--orpheus\r\nContent-Disposition: form-data; name="token"\r\n\r\n${SLACK_API_TOKEN}\r\n--orpheus\r\nContent-Disposition: form-data; name="date_range"\r\n\r\n30d\r\n--orpheus\r\nContent-Disposition: form-data;`,
+      body: `--orpheus\r\nContent-Disposition: form-data; name="token"\r\n\r\n${process.env.SLACK_API_TOKEN}\r\n--orpheus\r\nContent-Disposition: form-data; name="date_range"\r\n\r\n30d\r\n--orpheus\r\nContent-Disposition: form-data;`,
       headers: {
         "content-type": "multipart/form-data; boundary=orpheus",
-        cookie: SLACK_API_COOKIE,
+        cookie: process.env.SLACK_API_COOKIE,
       },
     }
   ).then((r) => r.json());
