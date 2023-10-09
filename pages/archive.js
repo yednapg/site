@@ -35,8 +35,7 @@ export default function Archive() {
       <Box
         sx={{
           py: [5, 6],
-          background:
-            "linear-gradient(90deg, rgba(2,0,36,0.63) 0%, rgba(2,0,36,0.56) 100%)",
+          background: "rgba(236,55,80,0.2)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           textAlign: "center",
