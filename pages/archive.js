@@ -13,13 +13,15 @@ function Card({ card, title, date, number, description, affect }) {
   return (
     <Box>
       {card}
-      <Text as="p" sx={{ fontWeight: "bold" }}>
-        {title}{" "}
-        <Text sx={{ fontWeight: "bolder", color: "#8492a6" }}>
-          — {date}, {affect || "Used"} by {number} teenagers
+      <Box sx={{ mx: 3 }}>
+        <Text as="p" sx={{ fontWeight: "bold" }}>
+          {title}{" "}
+          <Text sx={{ fontWeight: "normal", color: "#8492a6" }}>
+            — {date}, {affect || "Used"} by {number} teenagers
+          </Text>
         </Text>
-      </Text>
-      <Text as="p">{description}</Text>
+        <Text as="p">{description}</Text>
+      </Box>
     </Box>
   );
 }
