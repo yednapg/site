@@ -1,8 +1,8 @@
-import CardModel from './card-model'
-import { Box, Card, Flex, Grid, Heading, Text } from 'theme-ui'
-import Buttons from './button'
-import Icon from '@hackclub/icons'
-import Dot from '../../dot'
+import CardModel from "./card-model";
+import { Box, Card, Flex, Grid, Heading, Text } from "theme-ui";
+import Buttons from "./button";
+import Icon from "@hackclub/icons";
+
 /** @jsxImportSource theme-ui */
 
 function BreakdownBox({
@@ -65,7 +65,6 @@ export default function Winter() {
       }}
       position={[null, 'bottom', 'bottom']}
       image="/home/winter-bg.webp"
-      badge
     >
       <Text variant="title" as="h3" sx={{ fontSize: ['36px', 4, 5] }}>
         Winter Hardware Wonderland
