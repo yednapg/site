@@ -107,7 +107,7 @@ export default function Archive() {
           gap: "5vh",
         }}
       >
-        <Box sx={{ borderRadius: '100px', border: '5px', padding: '4px', backgroundColor: '#D9D9D9' }} />
+        <Box sx={{ borderRadius: '100px', border: '5px', padding: '4px', backgroundColor: '#D9D9D9', mt: '32px' }} />
         <Grid
           sx={{
             flexDirection: ["column", "column", "column", "row"],
