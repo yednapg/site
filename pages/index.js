@@ -38,7 +38,6 @@ import GitHub from '../components/index/github'
 import Photo from '../components/photo'
 import Comma from '../components/comma'
 import Haxidraw from '../components/index/cards/haxidraw'
-import HackersWanted from '../components/index/cards/hackers-wanted'
 
 /** @jsxImportSource theme-ui */
 
@@ -637,7 +636,6 @@ function Page({
             </Box>
             <Outernet />
             <Slack slackKey={slackKey} data={slackData} events={events} />
-            <HackersWanted />
           </Box>
         </Box>
         <Box>
@@ -737,7 +735,9 @@ function Page({
                             user={data.user}
                             time={data.time}
                             message={data.message}
+                            url={data.url}
                             key={key}
+                            opacity={1 / (key/2 + 1)}
                           />
                         )
                       })}
@@ -1124,6 +1124,7 @@ export async function getStaticProps() {
 
   const { fetchGitHub } = require('./api/github')
   let gitHubData = await fetchGitHub()
+  console.log(gitHubData)
 
   //   let gitHubData = null
 
