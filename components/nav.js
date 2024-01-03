@@ -44,7 +44,7 @@ const fixed = props =>
 const Root = styled(Box)`
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 1000;
   ${fixed};
   @media print {
@@ -98,7 +98,7 @@ const layout = props =>
           height: 64px;
           font-weight: bold;
           font-size: ${theme.fontSizes[2]}px;
-          width: 100%;
+          width: 100vw;
           max-width: 18rem;
           &:not(:last-child) {
             border-bottom: 1px solid rgba(48, 48, 48, 0.125);
@@ -139,8 +139,8 @@ const Navigation = props => (
     <NextLink href="/clubs" passHref>
       <Link>Clubs</Link>
     </NextLink>
-    <NextLink href="/bank" passHref>
-      <Link>Bank</Link>
+    <NextLink href="/hcb" passHref>
+      <Link>Fiscal&nbsp;Sponsorship</Link>
     </NextLink>
     <NextLink href="/hackathons" passHref>
       <Link>Hackathons</Link>
@@ -149,7 +149,7 @@ const Navigation = props => (
       <Link>Slack</Link>
     </NextLink>
     <Link href="https://scrapbook.hackclub.com/">Scrapbook</Link>
-    <Link href="https://workshops.hackclub.com/">Workshops</Link>
+    <Link href="https://jams.hackclub.com/">Jams</Link>
     <NextLink href="/onboard" passHref>
       <Link>OnBoard</Link>
     </NextLink>

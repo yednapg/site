@@ -8,8 +8,15 @@ export function middleware(request) {
     if (continent === 'Oceania') {
       continent = 'Australia'
     }
-    const response = NextResponse.next();
-    response.cookies.set("continent", continent || "");
-    return response;
+    const response = NextResponse.next()
+    response.cookies.set('continent', continent || '')
+    return response
   }
+
+  if (request.nextUrl.pathname === '/donate/') {
+    return NextResponse.redirect('https://hackclub.com/philanthropy/');
+  }
+
+  return NextResponse.next();
+
 }

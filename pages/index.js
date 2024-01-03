@@ -1,16 +1,7 @@
-import {
-  Box,
-  Button,
-  Card,
-  Grid,
-  Heading,
-  Flex,
-  Badge,
-  Link,
-  Text
-} from 'theme-ui'
-import React, { useEffect, useRef, useState } from 'react'
+import {Badge, Box, Button, Card, Flex, Grid, Heading, Link, Text} from 'theme-ui'
+import React, {useEffect, useRef, useState} from 'react'
 import Head from 'next/head'
+import {useRouter} from 'next/router'
 import Meta from '@hackclub/meta'
 import Nav from '../components/nav'
 import BGImg from '../components/background-image'
@@ -18,13 +9,13 @@ import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'
 import Stage from '../components/stage'
 import Carousel from '../components/index/carousel'
-import Outernet from '../components/index/cards/outernet'
+import Pizza from '../components/index/cards/pizza'
 import Sprig from '../components/index/cards/sprig'
 import Sinerider from '../components/index/cards/sinerider'
 import SprigConsole from '../components/index/cards/sprig-console'
 import Clubs from '../components/index/cards/clubs'
 import Workshops from '../components/index/cards/workshops'
-import Bank from '../components/index/cards/bank'
+import HCB from '../components/index/cards/hcb'
 import Hackathons from '../components/index/cards/hackathons'
 import OuternetImgFile from '../public/home/outernet-110.jpg'
 import Announcement from '../components/announcement'
@@ -38,6 +29,7 @@ import GitHub from '../components/index/github'
 import Photo from '../components/photo'
 import Comma from '../components/comma'
 import Haxidraw from '../components/index/cards/haxidraw'
+import Onboard from '../components/index/cards/onboard'
 
 /** @jsxImportSource theme-ui */
 
@@ -54,7 +46,8 @@ function Page({
   game,
   gameTitle,
   events,
-  carouselCards
+  carouselCards,
+  context
 }) {
   let [gameImage, setGameImage] = useState('')
   let [gameImage1, setGameImage1] = useState('')
@@ -63,6 +56,8 @@ function Page({
   let [github, setGithub] = useState(0)
   let [slackKey, setSlackKey] = useState(0)
   let [key, setKey] = useState(0)
+
+  const { asPath } = useRouter()
 
   let jsConfetti = useRef()
 
@@ -295,7 +290,7 @@ function Page({
               }}
               title="📸 Photo by Matt Gleich, Hack Clubber in NH!"
             >
-              Hackers at Outernet in VT
+              Hackers at Outernet in Vermont
             </Badge>
           </Box>
         </Box>
@@ -634,7 +629,7 @@ function Page({
                 and make things together!
               </Text>
             </Box>
-            <Outernet />
+            <Pizza />
             <Slack slackKey={slackKey} data={slackData} events={events} />
           </Box>
         </Box>
@@ -734,8 +729,8 @@ function Page({
                             img={data.userImage}
                             user={data.user}
                             time={data.time}
-                            message={data.message}
                             url={data.url}
+                            message={data.message}
                             key={key}
                             opacity={1 / (key/2 + 1)}
                           />
@@ -751,12 +746,13 @@ function Page({
                 gameImage={gameImage}
                 gameImage1={gameImage1}
               />
-              <Haxidraw />
+              <Onboard stars={stars.onboard.stargazerCount} delay={100} />
+              <Haxidraw stars={stars.blot.stargazerCount} delay={100} />
               <Sinerider delay={200} stars={stars.sinerider.stargazerCount} />
               <Box as="section" id="sprig">
                 <SprigConsole
                   delay={300}
-                  stars={stars.sprigHardware.stargazerCount}
+                  stars={stars.sprig.stargazerCount}
                   consoleCount={consoleCount}
                 />
               </Box>
@@ -840,8 +836,9 @@ function Page({
                 data={hackathonsData}
                 stars={stars.hackathons.stargazerCount}
               />
+
               {/* <Events events={events} /> */}
-              <Bank data={bankData} />
+              <HCB data={bankData} />
             </Box>
           </Box>
         </Box>
@@ -1071,6 +1068,76 @@ function Page({
           </Box>
         </Box>
       </Box>
+      {new URL(asPath, 'http://example.com').searchParams.get('gen') ===
+        'z' && (
+        <>
+          <Box
+            sx={{
+              position: 'fixed',
+              top: 0,
+              width: '100%',
+              zIndex: 1000
+            }}
+          >
+            <Box
+              sx={{
+                position: 'relative',
+                margin: 'auto',
+                width: 'fit-content',
+                lineHeight: 0
+              }}
+            >
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/sJNK4VKeoBM?si=zvhDKhb9C5G2b4TJ&controls=1&autoplay=1&mute=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              position: 'fixed',
+              bottom: 0,
+              right: 0,
+              zIndex: 1000,
+              lineHeight: 0
+            }}
+          >
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube-nocookie.com/embed/ChBg4aowzX8?si=X2J_T95yiaKXB2q4&controls=1&autoplay=1&mute=1"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </Box>
+          <Box
+            sx={{
+              position: 'fixed',
+              bottom: 0,
+              left: 0,
+              zIndex: 1000,
+              lineHeight: 0
+            }}
+          >
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube-nocookie.com/embed/JDQr1vICu54?si=U6-9AFtk7EdTabfp&autoplay=1&mute=1"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </Box>
+        </>
+      )}
       <MailingList />
       <Footer
         dark
@@ -1103,7 +1170,7 @@ export async function getStaticProps() {
 
   // HCB: get total raised
   let bankData = []
-  let initialBankData = await fetch('https://bank.hackclub.com/stats').then(r =>
+  let initialBankData = await fetch('https://hcb.hackclub.com/stats').then(r =>
     r.json()
   )
   let raised = initialBankData.raised / 100
@@ -1145,9 +1212,20 @@ export async function getStaticProps() {
   const consoleCount = await getConsoles()
 
   // Hackathons: get latest hackathons
-  const hackathonsData = await fetch(
-    'https://hackathons.hackclub.com/api/events/upcoming'
-  ).then(res => res.json())
+  let hackathonsData
+  try {
+    const response = await fetch(
+      'https://hackathons.hackclub.com/api/events/upcoming'
+    )
+    if (response.ok) {
+      hackathonsData = await response.json()
+    } else {
+      hackathonsData = [] // or some default value if the fetch fails
+    }
+  } catch (error) {
+    hackathonsData = [] // or some default value if an error occurs
+  }
+  hackathonsData.sort((a, b) => new Date(a.start) - new Date(b.start));
 
   let events = await fetch(
     'https://events.hackclub.com/api/events/upcoming/'

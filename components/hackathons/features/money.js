@@ -19,7 +19,7 @@ const Content = () => (
       }}
     >
       <Container maxWidth={28} sx={{ mx: 0, pt: 4, pb: 2 }}>
-        <Text variant="eyebrow">Hack Club Bank</Text>
+        <Text variant="eyebrow">HCB</Text>
         <br />
         <Text as="span" variant="title">
           Grants, waived fees, and more!
@@ -31,20 +31,13 @@ const Content = () => (
           icon="payment"
           leadText={
             <>
-              $500 grants (in partnership with <i>FIRST®</i>).
+              $500 grants.
             </>
           }
           body={
             <>
-              Running on Bank? Get a $500 grant once you have a venue, provided
-              by Hack Club with the help of{' '}
-              <Link
-                href="https://www.firstinspires.org/"
-                sx={{ fontStyle: 'italic', color: 'white' }}
-              >
-                FIRST
-              </Link>
-              .
+              Running on HCB? Get a $500 grant once you have a venue, provided
+              by Hack Club.
               <NextLink href="/hackathons/grant">
                 <Link sx={{ ml: 2, cursor: 'pointer' }}>Learn more &rarr;</Link>
               </NextLink>
@@ -56,22 +49,22 @@ const Content = () => (
           icon="bolt"
           leadText="All fees waived."
           body={`
-          Run your hackathon on Hack Club Bank for free. All the money you raise goes 
+          Run your hackathon on HCB for free. All the money you raise goes 
           directly towards your hackathon.`}
         />
         <ListItem
           icon="rep"
           leadText="A suite of free tools."
           body={`
-          When you join Hack Club Bank, you'll have access to a suite of free tools including
+          When you join HCB, you'll have access to a suite of free tools including
           debit cards, a domain name, stickers, and more.`}
         />
       </List>
-      <NextLink href="/bank" passHref>
+      <NextLink href="/hcb" passHref>
         <Button as="a" variant="outlineLg" sx={{ width: [null, null, 500] }}>
           Apply&nbsp;
           <Box as="span" sx={{ display: ['none', 'inline', ''] }}>
-            for Hack Club Bank
+            for HCB
           </Box>{' '}
           →
         </Button>
@@ -164,7 +157,7 @@ const Static = () => (
     sx={{
       position: 'relative',
       overflow: 'hidden',
-      backgroundImage: `url('/bank/bg.webp')`,
+      backgroundImage: `url('/hcb/bg.webp')`,
       backgroundSize: 'cover'
     }}
   >

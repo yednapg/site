@@ -12,12 +12,21 @@ export async function Slack() {
   let slackData = await fetch(
     "https://hackclub.slack.com/api/team.stats.timeSeries",
     {
+<<<<<<< HEAD
       method: "POST",
       body: `--orpheus\r\nContent-Disposition: form-data; name="token"\r\n\r\n${process.env.SLACK_API_TOKEN}\r\n--orpheus\r\nContent-Disposition: form-data; name="date_range"\r\n\r\n30d\r\n--orpheus\r\nContent-Disposition: form-data;`,
       headers: {
         "content-type": "multipart/form-data; boundary=orpheus",
         cookie: process.env.SLACK_API_COOKIE,
       },
+=======
+      method: 'POST',
+      body: `--orpheus\r\nContent-Disposition: form-data; name="token"\r\n\r\n${process.env.SLACK_API_TOKEN}\r\n--orpheus\r\nContent-Disposition: form-data; name="date_range"\r\n\r\n30d\r\n--orpheus\r\nContent-Disposition: form-data;`,
+      headers: {
+        'content-type': 'multipart/form-data; boundary=orpheus',
+        cookie: process.env.SLACK_API_COOKIE
+      }
+>>>>>>> origin/main
     }
   ).then((r) => r.json());
 
