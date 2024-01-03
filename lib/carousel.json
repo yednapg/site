@@ -60,19 +60,6 @@
     "title": "Blot",
     "description": "An open source drawing machine and online editor for generative art",
     "img": "https://emoji.slack-edge.com/T0266FRGM/tw_pencil2/c6afadc2280e571d.png",
-<<<<<<< HEAD
-    "link": "https://haxidraw.hackclub.com"
-  },
-  {
-    "background": "dark",
-    "titleColor": "white",
-    "descriptionColor": "white",
-    "title": "Hackers Wanted",
-    "description": "Our open love letter to hackers",
-    "img": "https://cloud-gbwqdsj6z-hack-club-bot.vercel.app/0new_piskel-4.png.png",
-    "link": "/hackers-wanted"
-=======
     "link": "https://blot.hackclub.dev"
->>>>>>> origin/main
   }
 ]

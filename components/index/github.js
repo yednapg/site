@@ -8,7 +8,6 @@ export default function GitHub({
   key,
   text,
   time,
-  url,
   message,
   opacity,
   url,
