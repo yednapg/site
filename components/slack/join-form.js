@@ -13,9 +13,22 @@ import { useRouter } from 'next/router'
 import useForm from '../../lib/use-form'
 import Submit from '../submit'
 import { getCookie, hasCookie } from 'cookies-next'
+import { useEffect, useState } from 'react'
 
 const JoinForm = ({ sx = {} }) => {
   const router = useRouter()
+  const [event, setEvent] = useState(null)
+
+  useEffect(() => {
+    if (!router.isReady) {
+      setEvent(null)
+      console.log('not ready yet!')
+    } else {
+      setEvent(router.query.event)
+      console.log('Hello from the client!', name)
+    }
+  }, [])
+
   const { status, formProps, useField } = useForm('/api/join/', null, {
     clearOnSubmit: 5000,
     method: 'POST',
@@ -23,7 +36,7 @@ const JoinForm = ({ sx = {} }) => {
       ? {
           continent: getCookie('continent'),
           reason: router.query.reason,
-          event: router.query.event
+          event: event
         }
       : { reason: router.query.reason, event: router.query.event }
   })

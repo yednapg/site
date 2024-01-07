@@ -55,6 +55,9 @@ export default async function handler(req, res) {
     })
   }
 
+  console.log("Hello from the server!", data.event)
+  console.log("Hello from the server!", data)
+
   const airtablePromise = joinTable.create({
     'Full Name': data.name,
     'Email Address': data.email,
@@ -62,7 +65,7 @@ export default async function handler(req, res) {
     Reason: data.reason,
     Invited: !waitlist,
     Club: data.club ? data.club : '',
-    Event: data.event ? data.event : '',
+    'Event': data.event ? data.event : '',
     IP: req.headers['x-forwarded-for'] || req.socket.remoteAddress
   })
 
