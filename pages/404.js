@@ -160,19 +160,23 @@ const Blinking = styled(Heading)`
   &:after {
     left: 2px;
     text-shadow: -2px 0 ${theme.colors.red};
-    animation: ${animation1} 2s infinite linear alternate-reverse;
+    animation: ${animation1} 2s infinite steps(2, jump-end) alternate-reverse;
   }
   &:before {
     left: -2px;
     text-shadow: -2px 0 ${theme.colors.cyan};
-    animation: ${animation2} 4s infinite linear alternate-reverse;
+    animation: ${animation2} 4s infinite steps(2, jump-end) alternate-reverse;
   }
 `
 
 const Spinning = styled(Image)`
   @keyframes spin {
-      from {transform:rotate(0deg);}
-      to {transform:rotate(360deg);}
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   animation-name: spin;
@@ -188,8 +192,11 @@ const NotFoundPage = () => (
     <ForceTheme theme="dark" />
     <Nav color="primary" dark />
     <Container variant="narrow" sx={{ py: [5, 6], textAlign: 'center' }}>
-      <Spinning sx={{fontSize: [128, 256], textAlign: 'center', height: '1lh'}} src="/404/dinobox.svg"></Spinning>
-      <br/>
+      <Spinning
+        sx={{ fontSize: [128, 256], textAlign: 'center', height: '1lh' }}
+        src="/404/dinobox.svg"
+      ></Spinning>
+      <br />
       <Blinking as="h1" variant="title" sx={{ fontSize: [64, 128] }}>
         404!
       </Blinking>

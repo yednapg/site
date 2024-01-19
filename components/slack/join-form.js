@@ -1,34 +1,64 @@
 import {
+  Box,
   Card,
-  Label,
-  Input,
-  Textarea,
-  Select,
   Grid,
+  Input,
+  Label,
+  Link,
+  Select,
   Text,
-  Link
+  Textarea
 } from 'theme-ui'
 import { useRouter } from 'next/router'
 import useForm from '../../lib/use-form'
 import Submit from '../submit'
+import { getCookie, hasCookie } from 'cookies-next'
 
 const JoinForm = ({ sx = {} }) => {
   const router = useRouter()
   const { status, formProps, useField } = useForm('/api/join/', null, {
-    clearOnSubmit: 5000,
+    clearOnSubmit: 60000,
     method: 'POST',
-    initData: router.query.continent
-      ? { continent: router.query.continent, reason: router.query.reason }
-      : { reason: router.query.reason }
+    initData: hasCookie('continent')
+      ? {
+          continent: getCookie('continent'),
+          reason: router.query.reason,
+          event: router.query.event
+        }
+      : { reason: router.query.reason, event: router.query.event }
   })
 
+  const eventReferrer = useField('event').value
   const isAdult = useField('educationLevel').value === 'tertiary'
   const useWaitlist = process.env.NEXT_PUBLIC_OPEN !== 'true'
 
   return (
     <Card sx={{ maxWidth: 'narrow', mx: 'auto', label: { mb: 3 }, ...sx }}>
       <form {...formProps}>
-        <Grid columns={[1, 2]} gap={1} sx={{ columnGap: 3 }}>
+        {eventReferrer && (
+          <Box
+            sx={{
+              bg: 'purple',
+              color: 'white',
+              p: 2,
+              mb: 3,
+              borderRadius: 5,
+              textAlign: 'center'
+            }}
+          >
+            <Text variant="headline" sx={{ fontSize: 3 }}>
+              {eventReferrer === 'onboard'
+                ? "We can't wait to see your PCB!"
+                : `We can't wait to see you at ${eventReferrer}!`}
+            </Text>
+
+            <br />
+            <Text variant="subtitle" sx={{ fontSize: 2 }}>
+              <i> In the meantime, we'll be hanging around in the Slack </i>
+            </Text>
+          </Box>
+        )}
+        <Grid columns={[1, 2]} gap={1} sx={{ columnGap: 2 }}>
           <Label>
             Full name
             <Input
@@ -91,6 +121,7 @@ const JoinForm = ({ sx = {} }) => {
             required
           />
         </Label>
+
         {isAdult && (
           <Text
             variant="caption"
@@ -98,24 +129,47 @@ const JoinForm = ({ sx = {} }) => {
             as="div"
             sx={{ maxWidth: '600px', textAlign: 'center', mb: 2 }}
           >
-            Hold your horses! <b>Our Slack community is for teenagers</b>, and
-            as such we're really careful about letting adults join. If you feel
-            you'd have a place here, reach out to{' '}
-            <Link href="mailto:slack@hackclub.com">slack@hackclub.com</Link>.
+            Hold your horses! <b>Our Slack community is for minors</b>! To find
+            out more about what all we do, check out our{' '}
+            <Link href="https://github.com/hackclub"> Github </Link>. If you're
+            a parent or educator & want to talk to a member of our team, send us
+            a email at{' '}
+            <Link href="mailto:team@hackclub.com">team@hackclub.com</Link>.
           </Text>
         )}
+
         {!isAdult && (
-          <Submit
-            status={status}
-            mt={'0px!important'}
-            labels={{
-              default: useWaitlist ? 'Join Waitlist' : 'Get Invite',
-              error: 'Something went wrong',
-              success: useWaitlist
-                ? "We'll be in touch soon!"
-                : 'Email coming soon!'
-            }}
-          />
+          <Box>
+            <Submit
+              status={status}
+              mt={'0px!important'}
+              labels={{
+                default: useWaitlist ? 'Join Waitlist' : 'Get Invite',
+                error: 'Something went wrong',
+                success: useWaitlist
+                  ? "We'll be in touch soon!"
+                  : 'Check your email for invite!'
+              }}
+              disabled={status === 'loading' || status === 'success'}
+            />
+            {status === 'success' && (
+              <Text
+                variant="caption"
+                color="secondary"
+                as="div"
+                sx={{
+                  maxWidth: '600px',
+                  textAlign: 'center',
+                  mt: 3
+                }}
+              >
+                Search for "Slack" in your mailbox! Not there?{' '}
+                <Link href="mailto:slack@hackclub.com" sx={{ ml: 1 }}>
+                  Send us an email
+                </Link>
+              </Text>
+            )}
+          </Box>
         )}
       </form>
     </Card>

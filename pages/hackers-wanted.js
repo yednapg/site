@@ -662,9 +662,8 @@ const Page = () => {
                     mail it to me
                   </button>
                   {submitted && (
-                    <Box variant="primary" sx={{ bg: 'green', mt: [2, 3] }}>
-                      <Icon glyph="send" />
-                      <Text sx={{ ml: 2 }}>Signed up!</Text>
+                    <Box variant="primary" sx={{ bg: 'white', mt: [2, 3], display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'black' }}>
+                      <Text sx={{ ml: 2 }}>On it's way!</Text>
                     </Box>
                   )}
                 </Box>

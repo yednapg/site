@@ -4,7 +4,7 @@ import Head from 'next/head'
 import ForceTheme from '../../components/force-theme'
 import Nav from '../../components/nav'
 import Footer from '../../components/footer'
-import MSparkles from '../../components/hackathons/grant/money'
+import MSparkles from '../../components/sparkles/money'
 import NextLink from 'next/link'
 import { Link, Text, Button, Card } from 'theme-ui'
 import Icon from '@hackclub/icons'
@@ -64,7 +64,7 @@ const HackathonGrant = () => {
       <Meta
         as={Head}
         title="Hackathon Grant"
-        description="Hack Club is partnering with FIRST to provide $500 grants to in-person high school hackathons happening until June 30th, 2023."
+        description="Hack Club is providing $500 grants to in-person high school hackathons happening until December 31st, 2024."
         image="https://cloud-7yw9f6xnv-hack-club-bot.vercel.app/0grant.png"
       />
       <style>{styles}</style>
@@ -128,25 +128,6 @@ const HackathonGrant = () => {
                     target="_blank"
                   ></Box>
                 </NextLink>
-                <Box mr={3} sx={{ fontWeight: 'normal' }}>
-                  +
-                </Box>
-                <NextLink href="https://www.firstinspires.org" passHref>
-                  <Box
-                    as="a"
-                    sx={{
-                      width: 72,
-                      height: 72,
-                      backgroundImage: "url('/hackathons/grant/first.png')",
-                      backgroundColor: '#231F20',
-                      backgroundSize: '60px, cover',
-                      backgroundPosition: 'center center',
-                      backgroundRepeat: 'no-repeat',
-                      borderRadius: 8
-                    }}
-                    target="_blank"
-                  ></Box>
-                </NextLink>
               </Flex>
               A <MSparkles>$500</MSparkles> grant for your{' '}
               <a sx={{ whiteSpace: 'nowrap' }}>in-person</a> hackathon.
@@ -158,20 +139,13 @@ const HackathonGrant = () => {
                 my: 4
               }}
             >
-              Hack Club is partnering with{' '}
-              <NextLink href="https://www.firstinspires.org" passHref>
-                <Link target="_blank">
-                  <i>FIRST®</i>
-                </Link>
-              </NextLink>{' '}
-              to provide $500 grants (and waiving{' '}
-              <Link href="/bank" target="_blank">
-                Hack Club Bank
+              Hack Club is providing $500 grants (and waiving{' '}
+              <Link href="/hcb" target="_blank">
+                HCB
               </Link>{' '}
               fees) to <a sx={{ whiteSpace: 'nowrap' }}>in-person</a>{' '}
-              <a sx={{ whiteSpace: 'nowrap' }}>high school</a> hackathons{' '}
-              <s>this semester between August and December 31, 2022</s> until
-              June 30th, 2023.
+              <a sx={{ whiteSpace: 'nowrap' }}>high school</a> hackathons until
+              December 31st, 2024.
             </Box>
             <Button variant="ctaLg" as="a" href="#apply" sx={{ mt: 2 }}>
               {open ? 'Apply Now' : 'Coming Soon'}
@@ -218,14 +192,14 @@ const HackathonGrant = () => {
 
           <Grid columns={[1, 1, 2, 2]} gap={4}>
             <Requirement
-              title="Running this semester"
+              title="Running through next year"
               checkmark="clock-fill"
               background="https://icons.hackclub.com/api/icons/0x212025/glyph:clock.svg"
               size="36"
             >
               We want to bring back high schooler-led events around the world,
               so we're only offering this grant for high school hackathons that
-              take place this semester (until June 30th).
+              take place throughout 2024 (until December 31st).
               <br />
               <br />
               <Text
@@ -234,8 +208,8 @@ const HackathonGrant = () => {
                   color: 'muted'
                 }}
               >
-                This is not an annual program and is only available this
-                semester.
+                This is not an annual program and has only been renewed until
+                the end of 2024.
               </Text>
             </Requirement>
             <Requirement
@@ -332,7 +306,7 @@ const HackathonGrant = () => {
                 }}
               >
                 You will need to share a link to your website. Don't have a
-                domain? Hack Club Bank provides a free domain. Check out this{' '}
+                domain? HCB provides a free domain. Check out this{' '}
                 <Link
                   href="https://notebook.lachlanjc.com/2019-09-06_making_a_hackathon_site"
                   target="_blank"
@@ -361,17 +335,17 @@ const HackathonGrant = () => {
               background="https://icons.hackclub.com/api/icons/0x212025/glyph:bank-account.svg"
               size="28"
             >
-              You'll receive your grant through Hack Club Bank, our financial
-              platform for hackathons, and spend it in the open with{' '}
+              You'll receive your grant through HCB, our financial platform for
+              hackathons, and spend it in the open with{' '}
               <Link
-                href="https://changelog.bank.hackclub.com/transparent-finances-(optional-feature)-151427"
+                href="https://changelog.hcb.hackclub.com/transparent-finances-(optional-feature)-151427"
                 target="_blank"
               >
                 Transparency Mode
               </Link>
               . Sign up for{' '}
-              <Link href="/bank" target="_blank">
-                Hack Club Bank
+              <Link href="/hcb" target="_blank">
+                HCB
               </Link>{' '}
               before applying.
               <br />
@@ -382,8 +356,8 @@ const HackathonGrant = () => {
                   color: 'muted'
                 }}
               >
-                If you're unable to use Hack Club Bank, we're unfortunately
-                unable to support you through this grant program.
+                If you're unable to use HCB, we're unfortunately unable to
+                support you through this grant program.
               </Text>
             </Requirement>
           </Grid>
@@ -399,11 +373,7 @@ const HackathonGrant = () => {
             logos found on the respective brand guides for{' '}
             <Link href="/brand" target="_blank">
               Hack Club
-            </Link>{' '}
-            and{' '}
-            <Link href="https://www.firstinspires.org/brand" target="_blank">
-              <i>FIRST®</i>
-            </Link>
+            </Link>{'.'}
             .
           </Text>
 
@@ -429,7 +399,7 @@ const HackathonGrant = () => {
         <Card
           as="a"
           variant="interactive"
-          href="mailto:bank@hackclub.com"
+          href="mailto:hcb@hackclub.com"
           sx={{
             mx: 'auto',
             maxWidth: '52rem',
@@ -465,7 +435,7 @@ const HackathonGrant = () => {
           >
             <strong>Questions?</strong>
             <Text as="span" variant="caption" color="secondary" sx={{ pl: 3 }}>
-              Reach out to <Link>bank@hackclub.com</Link>
+              Reach out to <Link>hcb@hackclub.com</Link>
             </Text>
           </Text>
         </Card>

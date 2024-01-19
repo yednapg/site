@@ -1,9 +1,9 @@
-import { Box, Flex, Grid, Text, Avatar, Card } from 'theme-ui'
+import { Box, Flex, Text, Avatar, Card } from 'theme-ui'
 import Icon from '@hackclub/icons'
 import { useState } from 'react'
 
 export default function Bio({ popup = true, spanTwo = false, ...props }) {
-  let { img, name, teamRole, pronouns, text, subrole, href } = props
+  let { img, name, teamRole, pronouns, text, subrole, href, video } = props
   const [expand, setExpand] = useState(false)
   return (
     <>
@@ -22,10 +22,10 @@ export default function Bio({ popup = true, spanTwo = false, ...props }) {
           maxWidth: '600px',
           zIndex: !popup ? 1003 : 5,
           maxHeight: '90vh',
-          overflowY: 'scroll',
+          overflowY: 'hidden',
           overscrollBehavior: 'contain',
           gridColumn: !spanTwo ? null : [null, null, `1 / span 2`],
-          position: 'relative'
+          position: 'relative',
         }}
         as={href && !text ? 'a' : 'div'}
         href={href}
@@ -98,9 +98,30 @@ export default function Bio({ popup = true, spanTwo = false, ...props }) {
             </Text>
           </Flex>
           {!popup && (
-            <Text mt={2} mb={0} color="black">
-              {text}
-            </Text>
+            <>
+              <Text mt={2} mb={0} color="black">
+                {text}
+              </Text>
+              {video && (
+                <Flex
+                  sx={{
+                    marginTop: 4,
+                    marginX: 5,
+                    justifyContent: 'center',
+                    aspectRatio: 4 / 3
+                  }}
+                >
+                  <iframe
+                    width="100%"
+                    src={video}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </Flex>
+              )}
+            </>
           )}
           {!popup && href && (
             <Flex sx={{ alignItems: 'center' }}>

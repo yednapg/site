@@ -1,16 +1,17 @@
 import {
+  Badge,
   Box,
   Button,
   Card,
+  Flex,
   Grid,
   Heading,
-  Flex,
-  Badge,
   Link,
   Text
 } from 'theme-ui'
 import React, { useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Meta from '@hackclub/meta'
 import Nav from '../components/nav'
 import BGImg from '../components/background-image'
@@ -18,15 +19,16 @@ import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'
 import Stage from '../components/stage'
 import Carousel from '../components/index/carousel'
+import Pizza from '../components/index/cards/pizza'
 import Sprig from '../components/index/cards/sprig'
 import Sinerider from '../components/index/cards/sinerider'
 import SprigConsole from '../components/index/cards/sprig-console'
 import Clubs from '../components/index/cards/clubs'
 import Workshops from '../components/index/cards/workshops'
-import Bank from '../components/index/cards/bank'
-import Epoch from '../components/index/cards/epoch'
+import HCB from '../components/index/cards/hcb'
 import Hackathons from '../components/index/cards/hackathons'
-import AssembleImgFile from '../public/home/assemble.jpg'
+import OuternetImgFile from '../public/home/outernet-110.jpg'
+import Announcement from '../components/announcement'
 import Konami from 'react-konami-code'
 import JSConfetti from 'js-confetti'
 import Secret from '../components/secret'
@@ -36,10 +38,9 @@ import Icon from '../components/icon'
 import GitHub from '../components/index/github'
 import Photo from '../components/photo'
 import Comma from '../components/comma'
-import styles from '../styles/Home.module.css'
-import Image from 'next/image'
-import anime from 'animejs/lib/anime.es.js'
-import HButton from '../components/hackers-wanted/button'
+import Haxidraw from '../components/index/cards/haxidraw'
+import Onboard from '../components/index/cards/onboard'
+
 /** @jsxImportSource theme-ui */
 
 function Page({
@@ -55,7 +56,8 @@ function Page({
   game,
   gameTitle,
   events,
-  carouselCards
+  carouselCards,
+  context
 }) {
   let [gameImage, setGameImage] = useState('')
   let [gameImage1, setGameImage1] = useState('')
@@ -64,6 +66,8 @@ function Page({
   let [github, setGithub] = useState(0)
   let [slackKey, setSlackKey] = useState(0)
   let [key, setKey] = useState(0)
+
+  const { asPath } = useRouter()
 
   let jsConfetti = useRef()
 
@@ -116,54 +120,34 @@ function Page({
   ]
 
   // janky right now and does not show last image
-  console.log(
-    `White sheets of paper\nWaiting to be printed on\nA blank console waits`
-  )
+
   useEffect(() => {
+    console.log(
+      `White sheets of paper\nWaiting to be printed on\nA blank console waits`
+    )
     if (count === images.length - 1) {
       setCount(0)
     }
   }, [count, images.length])
 
-  function loadHackersWanted() {
-    let e = document.getElementById('load-bg')
-    e.style.display = 'block'
-    let body = document.querySelector('body')
-    body.style.overflow = 'hidden'
+  // Spotlight effect
+  const spotlightRef = useRef()
+  useEffect(() => {
+    const handler = event => {
+      var rect = document.getElementById('spotlight').getBoundingClientRect()
+      var x = event.clientX - rect.left //x position within the element.
+      var y = event.clientY - rect.top //y position within the element.
 
-    // let song = document.querySelector('#song')
-    // if (song.paused) {
-    //   song.volume = 0.2
-    //   song.play()
-    // }
+      spotlightRef.current.style.background = `radial-gradient(
+				circle at ${x}px ${y}px,
+				rgba(132, 146, 166, 0) 10px,
+				rgba(249, 250, 252, 0.9) 80px
+			)`
+    }
+    window.addEventListener('mousemove', handler)
+    return () => window.removeEventListener('mousemove', handler)
+  }, [])
 
-    anime
-      .timeline()
-      .add({
-        targets: '#load',
-        duration: 5000,
-        translateY: '100vh',
-        easing: 'steps(30)'
-      })
-      // .add({
-      //   targets: 'img',
-      //   duration: 2000,
-      //   opacity: [0, 1],
-      //   easing: 'easeOutExpo',
-      //   delay: 800
-      // })
-      // .add({
-      //   targets: 'img',
-      //   duration: 500,
-      //   opacity: 0
-      // })
-      // .add({
-      //   targets: '#text',
-      //   duration: 2000,
-      //   opacity: [0, 1],
-      //   delay: 1200
-      // })
-  }
   return (
     <>
       <Meta
@@ -188,73 +172,19 @@ function Page({
           position: 'relative'
         }}
       >
-        <Box sx={{width: '100vw', height: '100vh', background: '#0000', position: 'fixed', display: 'none', zIndex: 2000}} id="load-bg">
-          <Box className={styles.load} id="load" sx={{position: 'absolute', top: '-100vh'}}></Box>
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: '100%',
-              zIndex: 2003,
-              position: 'relative'
-            }}
-          >
-            <Box
-              id="text"
-              sx={{
-                width: '70vw',
-                height: '25vw',
-                background: 'white',
-                border: '2px solid',
-                boxShadow: '6px 6px',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                fontFamily: 'Chicago',
-                fontSize: '2em',
-                flexDirection: 'column'
-              }}
-            >
-              Hackers Wanted: Our Story
-              <HButton link="/hackers-wanted">Read</HButton>
-            </Box>
-            <img
-              src="https://cloud-76740yvae-hack-club-bot.vercel.app/0dither_it_flag-standalone-bw__5_.png"
-              sx={{
-                minWidth: '80px',
-                width: '10vw',
-                opacity: 0,
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, 50%)',
-                userSelect: 'none'
-              }}
-            />
-            <audio id="song" sx={{display: 'none'}}>
-              <source
-                src="https://cloud-2wquhm8wa-hack-club-bot.vercel.app/0mac_audio.mp4"
-                type="audio/mp3"
-              />
-            </audio>
-          </Box>
-        </Box>
         <Secret
           reveal={reveal}
           onMouseEnter={() => {
             setHover(true)
-            console.log('hover:', hover)
+            console.log(hover)
           }}
           onMouseOut={() => {
-            setHover(false)
-            console.log('hover:', hover)
+            setReveal(false)
           }}
         />
         <Konami action={easterEgg}>
           {"Hey, I'm an Easter Egg! Look at me!"}
         </Konami>
-
         <Box
           as="header"
           sx={{
@@ -267,10 +197,17 @@ function Page({
           }}
         >
           <BGImg
-            src={AssembleImgFile}
-            alt="Hack Clubbers assemble at Figma HQ for the first IRL hackathon in SF since 2020: Assemble. 📸 Photo by Kunal Botla, Hack Clubber in MA!"
+            src={OuternetImgFile}
+            alt="Hack Clubbers gather in the great outdoors of Cabot, VT, for an experience unlike any other: Outernet. 📸 Photo by Matt Gleich, Hack Clubber in NH!"
             priority
             gradient="linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.45))"
+          />
+          <Announcement
+            copy="Hop OnBoard and create your first PCB"
+            caption="Join 1,000 others to create your first circuit board."
+            href="https://hackclub.com/onboard/"
+            iconLeft="idea"
+            color="primary"
           />
           <Box
             sx={{
@@ -318,11 +255,9 @@ function Page({
                   }}
                 >
                   <Text
-                    // onClick={() => {
-                    //   // setHover(false)
-                    //   // !reveal ? setReveal(true) : setReveal(false)
-                    //   loadHackersWanted()
-                    // }}
+                    onClick={() => {
+                      !reveal ? setReveal(true) : setReveal(false)
+                    }}
                     sx={{
                       // lineHeight: 0.875,
                       px: 2,
@@ -369,7 +304,7 @@ function Page({
           >
             <Badge
               as="a"
-              href="https://www.youtube.com/watch?v=PnK4gzO6S3Q"
+              href="https://outernet.hackclub.com/"
               target="_blank"
               rel="noopener"
               variant="pill"
@@ -384,9 +319,9 @@ function Page({
                 transition: '0.3s ease'
                 // mixBlendMode: 'multiply'
               }}
-              title="📸 Photo by Kunal Botla, Hack Clubber in MA!"
+              title="📸 Photo by Matt Gleich, Hack Clubber in NH!"
             >
-              Hackers at Assemble in SF
+              Hackers at Outernet in Vermont
             </Badge>
           </Box>
         </Box>
@@ -446,7 +381,6 @@ function Page({
                 }}
                 onClick={() => {
                   setCount(count + 1)
-                  console.log(count)
                 }}
               >
                 <Box
@@ -678,64 +612,69 @@ function Page({
         </Box>
         <Carousel cards={carouselCards} />
         <Box
+          id="spotlight"
           as="section"
           sx={{
-            background: 'snow',
-            backgroundImage: `url('https://icons.hackclub.com/api/icons/0xF4F7FB/glyph:rep.svg')`,
+            backgroundImage: `
+              linear-gradient(rgba(249, 250, 252, 0.7), rgba(249, 250, 252, 0.7)),
+              url('https://icons.hackclub.com/api/icons/0x8492a6/glyph:rep.svg')
+            `,
             backgroundSize: '40px 40px',
             backgroundRepeat: 'repeat',
-            backgroundPosition: '10% 10%'
+            position: 'relative'
           }}
         >
+          <Box
+            ref={spotlightRef}
+            sx={{
+              position: 'absolute',
+              zIndex: 2,
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              bg: 'snow',
+              pointerEvents: 'none'
+            }}
+          />
           <Box
             sx={{
               position: 'relative',
               width: '90vw',
               maxWidth: 'layout',
-              margin: 'auto'
+              margin: 'auto',
+              zIndex: 5
             }}
-            py={[4, 5, '82px']}
+            py={[4, 4, 5]}
           >
             <Box>
-              <Text
-                variant="title"
-                as="h2"
-                sx={{
-                  fontSize: ['36px', '48px', '72px'],
-                  width: '18ch',
-                  textAlign: 'center',
-                  margin: 'auto'
-                }}
-              >
+              <Text variant="title" sx={{ fontSize: ['36px', 4, 5] }}>
                 Connect with{' '}
                 <Text
                   as="span"
                   sx={{
                     borderRadius: 'default',
+                    px: 2,
                     mx: 0,
                     whiteSpace: 'nowrap',
-                    color: 'red'
+                    color: 'white',
+                    bg: 'red'
                   }}
                 >
                   builders
                 </Text>{' '}
-                from around the world.
+                from around the world
               </Text>
               <Text
                 variant="subtitle"
                 as="p"
-                sx={{
-                  fontSize: ['18px', '24px', '32px'],
-                  margin: 'auto',
-                  pt: 2,
-                  pb: [1, 0, 0],
-                  textAlign: 'center'
-                }}
+                sx={{ fontSize: ['18px', '20px', '22px'], pb: [3, 0, 0] }}
               >
                 We gather both online and in-person to share our love of code
-                and make things together.
+                and make things together!
               </Text>
             </Box>
+            <Pizza />
             <Slack slackKey={slackKey} data={slackData} events={events} />
           </Box>
         </Box>
@@ -835,8 +774,10 @@ function Page({
                             img={data.userImage}
                             user={data.user}
                             time={data.time}
+                            url={data.url}
                             message={data.message}
                             key={key}
+                            opacity={1 / (key/2 + 1)}
                           />
                         )
                       })}
@@ -850,11 +791,13 @@ function Page({
                 gameImage={gameImage}
                 gameImage1={gameImage1}
               />
+              <Onboard stars={stars.onboard.stargazerCount} delay={100} />
+              <Haxidraw stars={stars.blot.stargazerCount} delay={100} />
               <Sinerider delay={200} stars={stars.sinerider.stargazerCount} />
               <Box as="section" id="sprig">
                 <SprigConsole
                   delay={300}
-                  stars={stars.sprigHardware.stargazerCount}
+                  stars={stars.sprig.stargazerCount}
                   consoleCount={consoleCount}
                 />
               </Box>
@@ -938,8 +881,9 @@ function Page({
                 data={hackathonsData}
                 stars={stars.hackathons.stargazerCount}
               />
+
               {/* <Events events={events} /> */}
-              <Bank data={bankData} />
+              <HCB data={bankData} />
             </Box>
           </Box>
         </Box>
@@ -1099,7 +1043,7 @@ function Page({
                 <Stage
                   icon="github"
                   color="white"
-                  name="Explore Our Open Sourced Tools"
+                  name="Explore Our Open Source Tools"
                   desc="We’re currently building a game engine, daily streak system, graphing game, and more!"
                   sx={{
                     p: {
@@ -1168,8 +1112,79 @@ function Page({
             </Grid>
           </Box>
         </Box>
+
+        {new URL(asPath, 'http://example.com').searchParams.get('gen') ===
+          'z' && (
+          <>
+            <Box
+              sx={{
+                position: 'fixed',
+                top: 0,
+                width: '100%',
+                zIndex: 1000
+              }}
+            >
+              <Box
+                sx={{
+                  position: 'relative',
+                  margin: 'auto',
+                  width: 'fit-content',
+                  lineHeight: 0
+                }}
+              >
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube-nocookie.com/embed/sJNK4VKeoBM?si=zvhDKhb9C5G2b4TJ&controls=1&autoplay=1&mute=1"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                position: 'fixed',
+                bottom: 0,
+                right: 0,
+                zIndex: 1000,
+                lineHeight: 0
+              }}
+            >
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/ChBg4aowzX8?si=X2J_T95yiaKXB2q4&controls=1&autoplay=1&mute=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </Box>
+            <Box
+              sx={{
+                position: 'fixed',
+                bottom: 0,
+                left: 0,
+                zIndex: 1000,
+                lineHeight: 0
+              }}
+            >
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/JDQr1vICu54?si=U6-9AFtk7EdTabfp&autoplay=1&mute=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </Box>
+          </>
+        )}
+        <MailingList />
       </Box>
-      <MailingList />
       <Footer
         dark
         sx={{
@@ -1201,7 +1216,7 @@ export async function getStaticProps() {
 
   // HCB: get total raised
   let bankData = []
-  let initialBankData = await fetch('https://bank.hackclub.com/stats').then(r =>
+  let initialBankData = await fetch('https://hcb.hackclub.com/stats').then(r =>
     r.json()
   )
   let raised = initialBankData.raised / 100
@@ -1232,7 +1247,6 @@ export async function getStaticProps() {
   // Sprig: get newest games
   const { getGames } = require('./api/games')
   let game = await getGames()
-  console.log(game)
 
   let gameTitle = []
 
@@ -1243,9 +1257,20 @@ export async function getStaticProps() {
   const consoleCount = await getConsoles()
 
   // Hackathons: get latest hackathons
-  const hackathonsData = await fetch(
-    'https://hackathons.hackclub.com/api/events/upcoming'
-  ).then(res => res.json())
+  let hackathonsData
+  try {
+    const response = await fetch(
+      'https://hackathons.hackclub.com/api/events/upcoming'
+    )
+    if (response.ok) {
+      hackathonsData = await response.json()
+    } else {
+      hackathonsData = [] // or some default value if the fetch fails
+    }
+  } catch (error) {
+    hackathonsData = [] // or some default value if an error occurs
+  }
+  hackathonsData.sort((a, b) => new Date(a.start) - new Date(b.start))
 
   let events = await fetch(
     'https://events.hackclub.com/api/events/upcoming/'

@@ -19,6 +19,8 @@ const Base = styled(Box)`
   }
 `
 
+
+
 const Logo = props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +42,7 @@ const Logo = props => (
 const Service = ({ href, icon, name = '', ...props }) => (
   <Link
     target="_blank"
-    rel="noopener"
+    rel="noopener me"
     href={href}
     title={`Hack Club on ${name ? name : icon}`}
     {...props}
@@ -70,7 +72,7 @@ const Footer = ({ dark = false, children, ...props }) => (
             textDecoration: 'none',
             color: 'muted',
             transition: '0.125s color ease-in-out',
-            ':hover,:focus': { color: 'slate' }
+            ':hover,:focus': { color: 'slate', textDecoration: 'underline' }
           },
           '> div > a': {
             display: 'block',
@@ -108,9 +110,11 @@ const Footer = ({ dark = false, children, ...props }) => (
           <Heading as="h2" variant="subheadline" mb={3}>
             Resources
           </Heading>
+          <Link href="https://hackclub.com/pizza">Clubs Pizza Grant</Link>
           <Link href="https://events.hackclub.com/">Community Events</Link>
+          <Link href="https://jams.hackclub.com/">Jams</Link>
           <Link href="https://toolbox.hackclub.com/">Toolbox</Link>
-          <Link href="https://hackclub.com/map">Clubs Map</Link>
+          <Link href="https://directory.hackclub.com/">Clubs Directory</Link>
           <Link href="https://hackclub.com/conduct/">Code of Conduct</Link>
         </Box>
         <Box sx={{ gridColumn: ['span 2', 'span 1'] }}>
@@ -155,9 +159,9 @@ const Footer = ({ dark = false, children, ...props }) => (
               name="Figma"
             />
             <Service
-              href="https://www.facebook.com/Hack-Club-741805665870458"
-              icon="facebook"
-              name="Facebook"
+              href="https://social.dino.icu/@hackclub"
+              icon="mastodon"
+              name="Mastodon"
             />
             <Service
               href="https://www.youtube.com/c/HackClubHQ"
