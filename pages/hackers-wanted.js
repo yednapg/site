@@ -1256,6 +1256,7 @@ const Page = () => {
                     <Hack
                       delay={300 + index * 50}
                       sx={{ opacity: `${index == 0 ? 1 : 3 / index}` }}
+                      key={index}
                     >
                       {e.fields.username}
                     </Hack>
