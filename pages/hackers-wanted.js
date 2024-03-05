@@ -144,15 +144,9 @@ const Hack = ({ children, delay, ...props }) => {
   )
 }
 
-const Page = () => {
+const Page = ({ hackers }) => {
   const [scrolled, setScrolled] = useState(false)
   const [scrolled2, setScrolled2] = useState(false)
-
-  const { data: hackers } = useSWR(
-    'https://airbridge.hackclub.com/v0.1/Hackers%20Wanted/hackers',
-    fetcher,
-    { refreshInterval: 10000 }
-  )
 
   const { data: session, status } = useSession()
 
@@ -184,15 +178,13 @@ const Page = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        Username: e.target.Name.value,
-          Email: e.target.Address1.value
-        // Name: e.target.Name.value,
-        // Address1: e.target.Address1.value,
-        // Address2: e.target.Address2.value,
-        // City: e.target.City.value,
-        // State: e.target.State.value,
-        // Postal: e.target.Postal.value,
-        // Country: e.target.Country.value
+        Name: e.target.Name.value,
+        Address1: e.target.Address1.value,
+        Address2: e.target.Address2.value,
+        City: e.target.City.value,
+        State: e.target.State.value,
+        Postal: e.target.Postal.value,
+        Country: e.target.Country.value
       })
     })
 
@@ -662,7 +654,17 @@ const Page = () => {
                     mail it to me
                   </button>
                   {submitted && (
-                    <Box variant="primary" sx={{ bg: 'white', mt: [2, 3], display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'black' }}>
+                    <Box
+                      variant="primary"
+                      sx={{
+                        bg: 'white',
+                        mt: [2, 3],
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: 'black'
+                      }}
+                    >
                       <Text sx={{ ml: 2 }}>On it's way!</Text>
                     </Box>
                   )}
@@ -1257,7 +1259,7 @@ const Page = () => {
                       sx={{ opacity: `${index == 0 ? 1 : 3 / index}` }}
                       key={index}
                     >
-                      {e.fields.username}
+                      {e}
                     </Hack>
                   ))}
               </Flex>
@@ -1273,16 +1275,19 @@ const Page = () => {
                   display: ['']
                 }}
               >
-                <CTA
-                  image="https://cloud-e59dqvwx6-hack-club-bot.vercel.app/0new_piskel-2.png__1_.png"
-                  text="sign your name!"
-                  onClick={() => {
-                    signIn('github')
-                    sign()
-                  }}
-                  id="b-cta1"
-                  // sx={{width: [null, '180px !important', '180px !important', '180px !important', '180px !important']}}
-                />
+                {status == 'authenticated' ? (
+                  ''
+                ) : (
+                  <CTA
+                    image="https://cloud-e59dqvwx6-hack-club-bot.vercel.app/0new_piskel-2.png__1_.png"
+                    text="sign your name!"
+                    onClick={() => {
+                      signIn('github')
+                      sign()
+                    }}
+                    id="b-cta1"
+                  />
+                )}
                 <CTA
                   image="https://cloud-178z6geau-hack-club-bot.vercel.app/0new_piskel-3.png__1_.png"
                   text="get a paper copy"
@@ -1312,4 +1317,18 @@ const Page = () => {
     </>
   )
 }
+
+export async function getStaticProps() {
+  try {
+    const { fetchUsernames } = await require('./api/get-hackers-wanted')
+    let hackers = await fetchUsernames()
+    return { props: { hackers }, revalidate: 30 }
+  } catch (error) {
+    let hackers = [
+      "could not fetch signers",
+    ]
+    return { props: { hackers } }
+  }
+}
+
 export default Page

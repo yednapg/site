@@ -26,6 +26,7 @@
     "@octokit/core": "^5.0.1",
     "@octokit/rest": "^20.0.2",
     "add": "^2.0.6",
+    "airtable": "^0.12.2",
     "airtable-plus": "^1.0.4",
     "animated-value": "^0.2.4",
     "animejs": "^3.2.2",
