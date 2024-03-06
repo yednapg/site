@@ -202,7 +202,6 @@ const Page = ({ hackers }) => {
         window.innerHeight + Math.ceil(window.pageYOffset) + 400 >=
         document.body.offsetHeight
       setScrolled2(newState)
-      console.log('yay' + Math.ceil(window.pageYOffset))
     }
 
     if (typeof window !== 'undefined') {
@@ -1275,19 +1274,14 @@ const Page = ({ hackers }) => {
                   display: ['']
                 }}
               >
-                {status == 'authenticated' ? (
-                  ''
-                ) : (
                   <CTA
                     image="https://cloud-e59dqvwx6-hack-club-bot.vercel.app/0new_piskel-2.png__1_.png"
                     text="sign your name!"
                     onClick={() => {
                       signIn('github')
-                      sign()
                     }}
                     id="b-cta1"
                   />
-                )}
                 <CTA
                   image="https://cloud-178z6geau-hack-club-bot.vercel.app/0new_piskel-3.png__1_.png"
                   text="get a paper copy"
@@ -1324,9 +1318,7 @@ export async function getStaticProps() {
     let hackers = await fetchUsernames()
     return { props: { hackers }, revalidate: 30 }
   } catch (error) {
-    let hackers = [
-      "could not fetch signers",
-    ]
+    let hackers = ['could not fetch signers']
     return { props: { hackers } }
   }
 }

@@ -22,5 +22,22 @@ export default NextAuth({
       },
     }),
   ],
+  callbacks: {
+    async signIn({ user }) {
+      console.log(user)
+      await fetch('http://localhost:3000/api/hackers-wanted', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          Id: user.id,
+          Username: user.name,
+          Email: user.email
+        })
+      })
+      return true
+    }
+  },
   secret: process.env.NEXTAUTH_SECRET,
 });
