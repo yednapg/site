@@ -23,19 +23,29 @@ export default NextAuth({
     }),
   ],
   callbacks: {
+    async redirect({ url, baseUrl }) {
+      console.log("url: " + url)
+      console.log("baseUrl: " + baseUrl)
+      return "http://localhost:3000/hackers-wanted"
+    },
     async signIn({ user }) {
       console.log(user)
-      await fetch('http://localhost:3000/api/hackers-wanted', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          Id: user.id,
-          Username: user.name,
-          Email: user.email
+      try {
+        let res = await fetch('http://localhost:3000/api/hackers-wanted', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            Id: user.id,
+            Username: user.name,
+            Email: user.email
+          })
         })
-      })
+      } catch(err) {
+        console.log(err)
+      }
+      console.log('hi')
       return true
     }
   },

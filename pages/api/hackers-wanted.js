@@ -41,6 +41,8 @@ export default async function handler(req, res) {
                 }
               }
             )
+
+            res.status(200)
           } else {
             await base('hackers').create(
               [
@@ -52,13 +54,15 @@ export default async function handler(req, res) {
                   }
                 }
               ],
-              function (err, records) {
+              function (err) {
                 if (err) {
                   console.error('hi' + err)
                   return
                 }
               }
             )
+
+            res.status(200)
           }
           if (err) {
             console.error(err)

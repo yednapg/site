@@ -1278,7 +1278,7 @@ const Page = ({ hackers }) => {
                     image="https://cloud-e59dqvwx6-hack-club-bot.vercel.app/0new_piskel-2.png__1_.png"
                     text="sign your name!"
                     onClick={() => {
-                      signIn('github')
+                      signIn('github', {callbackUrl: "/hackers-wanted"})
                     }}
                     id="b-cta1"
                   />
