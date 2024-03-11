@@ -361,7 +361,7 @@ const Page = ({ hackers }) => {
         as={Head}
         title="Hackers Wanted"
         description="A love letter to hackers"
-        image="https://cloud-r4rrjh2z8-hack-club-bot.vercel.app/52020-07-25_52g0nw40p2b00dh39mt93xq5ubku6yaj.jpeg"
+        image="https://cloud-qjfym874o-hack-club-bot.vercel.app/01dither_it_189933158-9f00ceaf-7f61-4bef-9911-4cf4a14e0e4d__2_.png"
       />
       <Nav
         color="white"
