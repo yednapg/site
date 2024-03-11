@@ -26,12 +26,12 @@ export default NextAuth({
     async redirect({ url, baseUrl }) {
       console.log("url: " + url)
       console.log("baseUrl: " + baseUrl)
-      return 'https://site-git-hw.hackclub.dev/hackers-wanted#signatures'
+      return 'https://site-git-hw.hackclub.dev/hackers-wanted'
     },
     async signIn({ user }) {
       console.log(user)
       try {
-        fetch('https://site-git-hw.hackclub.dev/api/hackers-wanted', {
+        await fetch('https://site-git-hw.hackclub.dev/api/hackers-wanted/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

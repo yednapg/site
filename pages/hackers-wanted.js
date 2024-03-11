@@ -1307,7 +1307,7 @@ export async function getStaticProps() {
     let hackers = await fetchUsernames()
     return { props: { hackers }, revalidate: 60 }
   } catch (error) {
-    let hackers = ['could not fetch signers']
+    let hackers = ['could not fetch signers, please reload']
     return { props: { hackers } }
   }
 }
