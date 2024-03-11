@@ -1273,15 +1273,20 @@ const Page = ({ hackers }) => {
                   right: 0,
                   display: ['']
                 }}
+                id="signatures"
               >
+                {status == 'authenticated' ? (
+                  <></>
+                ) : (
                   <CTA
                     image="https://cloud-e59dqvwx6-hack-club-bot.vercel.app/0new_piskel-2.png__1_.png"
                     text="sign your name!"
                     onClick={() => {
-                      signIn('github', {callbackUrl: "/hackers-wanted"})
+                      signIn('github', { callbackUrl: '/hackers-wanted' })
                     }}
                     id="b-cta1"
                   />
+                )}
                 <CTA
                   image="https://cloud-178z6geau-hack-club-bot.vercel.app/0new_piskel-3.png__1_.png"
                   text="get a paper copy"
@@ -1316,7 +1321,7 @@ export async function getStaticProps() {
   try {
     const { fetchUsernames } = await require('./api/get-hackers-wanted')
     let hackers = await fetchUsernames()
-    return { props: { hackers }, revalidate: 30 }
+    return { props: { hackers }, revalidate: 60 }
   } catch (error) {
     let hackers = ['could not fetch signers']
     return { props: { hackers } }

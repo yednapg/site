@@ -4,27 +4,27 @@ var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
 )
 
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    const ids = []
+  try {
+    if (req.method === 'POST') {
+      const ids = []
 
-    await base('hackers')
-      .select({
-        maxRecords: 100,
-        view: 'Grid view'
-      })
-      .eachPage(
-        function page(records, fetchNextPage) {
-          records.forEach(function (record) {
-            ids.push({ github: record.get('id'), id: record.id })
-          })
-          fetchNextPage()
-        },
-        async function done(err) {
-          console.log(ids)
-          let findId = ids.find(x => x.github === req.body.Id)
-          if (findId) {
-            await base('hackers').update(
-              [
+      await base('hackers')
+        .select({
+          maxRecords: 100,
+          view: 'Grid view'
+        })
+        .eachPage(
+          function page(records, fetchNextPage) {
+            records.forEach(function (record) {
+              ids.push({ github: record.get('id'), id: record.id })
+            })
+            fetchNextPage()
+          },
+          async function done(err) {
+            console.log(ids)
+            let findId = ids.find(x => x.github === req.body.Id)
+            if (findId) {
+              await base('hackers').update([
                 {
                   id: findId.id,
                   fields: {
@@ -33,19 +33,9 @@ export default async function handler(req, res) {
                     email: req.body.Email
                   }
                 }
-              ],
-              function (err, records) {
-                if (err) {
-                  console.error(err)
-                  return
-                }
-              }
-            )
-
-            res.status(200)
-          } else {
-            await base('hackers').create(
-              [
+              ])
+            } else {
+              await base('hackers').create([
                 {
                   fields: {
                     id: req.body.Id,
@@ -53,22 +43,16 @@ export default async function handler(req, res) {
                     email: req.body.Email
                   }
                 }
-              ],
-              function (err) {
-                if (err) {
-                  console.error('hi' + err)
-                  return
-                }
-              }
-            )
-
-            res.status(200)
+              ])
+            }
+            res.status(200).json({ message: 'Data updated successfully' })
           }
-          if (err) {
-            console.error(err)
-            return
-          }
-        }
-      )
+        )
+    } else {
+      res.status(405).json({ error: 'Method not allowed' })
+    }
+  } catch (err) {
+    console.log(err)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }

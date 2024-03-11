@@ -3,6 +3,7 @@ import GithubProvider from "next-auth/providers/github";
 
 const CLIENT_ID = process.env.CLIENT_ID
 const CLIENT_SECRET = process.env.CLIENT_SECRET
+const URL = "https://site-git-hw.hackclub.dev"
 
 export default NextAuth({
   providers: [
@@ -26,12 +27,12 @@ export default NextAuth({
     async redirect({ url, baseUrl }) {
       console.log("url: " + url)
       console.log("baseUrl: " + baseUrl)
-      return "http://localhost:3000/hackers-wanted"
+      return baseUrl + "/hackers-wanted#signatures"
     },
     async signIn({ user }) {
       console.log(user)
       try {
-        let res = await fetch('http://localhost:3000/api/hackers-wanted', {
+        fetch(URL + '/api/hackers-wanted', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

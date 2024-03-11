@@ -11,7 +11,13 @@ export async function fetchUsernames() {
             records.forEach(function(record) {
                 usernames.push(record.get('username'));
             });
-            resolve(usernames);
+            fetchNextPage()
+        }, function done(err) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(usernames); 
+            }
         }
         );
     });
