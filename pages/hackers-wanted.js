@@ -382,7 +382,7 @@ const Page = ({ hackers }) => {
         id="nav"
       />
       <ForceTheme theme="dark" />
-      <Box as="main" sx={{ position: 'relative' }}>
+      <Box as="main" sx={{ position: 'relative', background: 'dark' }}>
         <Box
           id="bottomFade"
           sx={{
@@ -455,7 +455,7 @@ const Page = ({ hackers }) => {
               <Fade delay={100}>
                 <Text
                   as="h1"
-                  sx={{ fontSize: '5em', display: 'block', lineHeight: '1' }}
+                  sx={{ fontSize: '5em', display: 'block', lineHeight: '1', pt: '4' }}
                 >
                   Hackers Wanted
                 </Text>
