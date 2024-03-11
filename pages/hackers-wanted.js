@@ -150,22 +150,6 @@ const Page = ({ hackers }) => {
 
   const { data: session, status } = useSession()
 
-  async function sign() {
-    if (status == 'authenticated') {
-      await fetch('/api/hackers-wanted', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          Username: session.user.name,
-          Email: session.user.email
-        })
-      })
-    }
-  }
-
-  const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const formRef = useRef(null)
 
@@ -1251,7 +1235,7 @@ const Page = ({ hackers }) => {
               </Fade>
               {/* <Fade bottom delay={1500}> */}
               <Flex sx={{ flexWrap: 'wrap', ml: -1 }}>
-                {hackers &&
+                {hackers ?
                   hackers.map((e, index) => (
                     <Hack
                       delay={300 + index * 50}
@@ -1260,7 +1244,7 @@ const Page = ({ hackers }) => {
                     >
                       {e}
                     </Hack>
-                  ))}
+                  )) : <></>}
               </Flex>
               <Flex
                 sx={{

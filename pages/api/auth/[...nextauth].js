@@ -27,7 +27,7 @@ export default NextAuth({
     async redirect({ url, baseUrl }) {
       console.log("url: " + url)
       console.log("baseUrl: " + baseUrl)
-      return baseUrl + "/hackers-wanted#signatures"
+      return baseUrl + "/hackers-wanted"
     },
     async signIn({ user }) {
       console.log(user)
