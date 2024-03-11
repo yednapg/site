@@ -1234,7 +1234,7 @@ const Page = ({ hackers }) => {
                 <Box as="p">With love,</Box>
               </Fade>
               {/* <Fade bottom delay={1500}> */}
-              <Flex sx={{ flexWrap: 'wrap', ml: -1 }}>
+              {/* <Flex sx={{ flexWrap: 'wrap', ml: -1 }}>
                 {hackers ?
                   hackers.map((e, index) => (
                     <Hack
@@ -1245,7 +1245,7 @@ const Page = ({ hackers }) => {
                       {e}
                     </Hack>
                   )) : <></>}
-              </Flex>
+              </Flex> */}
               <Flex
                 sx={{
                   flexDirection: 'row',
@@ -1266,7 +1266,7 @@ const Page = ({ hackers }) => {
                     image="https://cloud-e59dqvwx6-hack-club-bot.vercel.app/0new_piskel-2.png__1_.png"
                     text="sign your name!"
                     onClick={() => {
-                      signIn('github', { callbackUrl: '/hackers-wanted' })
+                      signIn('github')
                     }}
                     id="b-cta1"
                   />
