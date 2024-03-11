@@ -1301,11 +1301,11 @@ const Page = ({ hackers }) => {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const { fetchUsernames } = await require('./api/get-hackers-wanted')
     let hackers = await fetchUsernames()
-    return { props: { hackers }, revalidate: 60 }
+    return { props: { hackers } }
   } catch (error) {
     let hackers = ['could not fetch signers, please reload']
     return { props: { hackers } }
