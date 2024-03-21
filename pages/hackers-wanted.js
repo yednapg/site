@@ -11,22 +11,17 @@ import {
   Text
 } from 'theme-ui'
 import Meta from '@hackclub/meta'
-import Head from 'next/head'
 import NextLink from 'next/link'
 import Nav from '../components/nav'
-import SlideDown from '../components/slide-down'
-import FadeIn from '../components/fade-in'
-import Icon from '../components/icon'
 import Footer from '../components/footer'
-import { keyframes } from '@emotion/react'
 import ForceTheme from '../components/force-theme'
 import { useEffect, useState, useRef } from 'react'
 import anime from 'animejs/lib/anime.es.js'
 import Fade from 'react-reveal/Fade'
-import useSWR from 'swr'
-import fetcher from '../lib/fetcher'
 import { useSession, getSession, signIn, signOut } from 'next-auth/react'
 import Draggable from 'react-draggable'
+import Tappable from 'react-tappable';
+import Head from 'next/head'
 
 /** @jsxImportSource theme-ui */
 
@@ -366,12 +361,18 @@ const Page = ({ hackers }) => {
       <Nav
         color="white"
         sx={{
-          // fontFamily: 'Terminal_Grotesk !important',
           backgroundColor: 'transparent !important',
           opacity: 0.5,
           zIndex: '4 !important',
           borderBottom: 'none',
           backdropFilter: 'none !important',
+          padding: '0',
+          '& .css-1facwnb-Box': {
+            padding: ['16px', '16px', '16px', '0']
+          },
+          '& .css-jyutbs-Box a': {
+            transform: ['scale(1)', 'scale(1)', 'scale(0.8)', 'scale(1)']
+          },
           '& .css-77r3sa': {
             backgroundImage:
               'url("https://cloud-7fhx9zewb-hack-club-bot.vercel.app/0new_piskel-3.png.png")',
@@ -478,8 +479,8 @@ const Page = ({ hackers }) => {
                 maxWidth: '500px',
                 width: '90vw',
                 position: 'fixed',
-                marginLeft: '30%',
-                marginTop: '-15%',
+                marginLeft: ['5%', '5%', '30%'],
+                marginTop: ['-35%','-15%'],
                 justifyContent: 'center',
                 alignItems: 'center',
                 p: 4,
@@ -496,6 +497,8 @@ const Page = ({ hackers }) => {
                 sx={{ position: 'relative', textAlign: 'left', width: '100%' }}
               >
                 <h4 sx={{ my: 0 }}>Get a physical copy of this letter:</h4>
+                <h5 sx={{ mt: 0, mb: 3, fontStyle: 'italic', fontWeight: 400 }}>US & Canada Only</h5>
+                <Tappable onTap={() => closeModal('modal')}>
                 <Box
                   sx={{
                     fontFamily: 'Terminal_Grotesk',
@@ -512,12 +515,14 @@ const Page = ({ hackers }) => {
                     background: 'transparent',
                     color: 'white',
                     fontSize: '1em',
-                    p: '0'
+                    p: '0',
+                    cursor: 'pointer'
                   }}
                   onClick={() => closeModal('modal')}
                 >
                   x
                 </Box>
+                </Tappable>
                 <Box
                   as="form"
                   ref={formRef}
@@ -591,13 +596,10 @@ const Page = ({ hackers }) => {
                     </Flex>
                     <Flex sx={{ flexDirection: 'column' }}>
                       <label>Country:</label>
-                      <input
-                        type="text"
-                        id="Country"
-                        name="Country"
-                        placeholder="United States"
-                        // required
-                      />
+                      <select id="Country" name="Country" sx={{height: '100%', fontFamily: 'Phantom Sans', fontSize: '1.1em'}}>
+                        <option value="United States" >United States</option>
+                        <option value="Canada" >Canada</option>
+                      </select>
                     </Flex>
                   </Flex>
                   {/* <button
@@ -628,6 +630,7 @@ const Page = ({ hackers }) => {
                       px: 2,
                       py: 1,
                       mt: 2,
+                      cursor: 'pointer',
                       '&:hover': {
                         color: '#000',
                         background: 'white'
@@ -664,8 +667,8 @@ const Page = ({ hackers }) => {
                 maxWidth: '500px',
                 width: '90vw',
                 position: 'fixed',
-                marginLeft: '30%',
-                marginTop: '-15%',
+                marginLeft: ['5%', '5%', '25%'],
+                marginTop: ['-35%','-20%'],
                 justifyContent: 'center',
                 alignItems: 'center',
                 p: 4,
@@ -685,11 +688,11 @@ const Page = ({ hackers }) => {
                   We hackers need a home, Hack Club could be that for you.
                 </h4>
                 <Box as="p" sx={{ my: [2, 3] }}>
-                  Be part of 25k+ high school students that love building on our
+                  Join thousands of high school students that love building on our
                   global Slack. Have a coding question? Looking for project
                   feedback? Want to debate the superiority of tabs vs spaces?
                 </Box>
-                <a target="_blank" href="https://github.com/hackclub">
+                <a target="_blank" href="https://hackclub.com/slack">
                   <button
                     sx={{
                       border: 'white 2.5px solid',
@@ -699,6 +702,7 @@ const Page = ({ hackers }) => {
                       px: 2,
                       py: 1,
                       mt: 2,
+                      cursor: 'pointer',
                       '&:hover': {
                         color: '#000',
                         background: 'white'
@@ -708,6 +712,7 @@ const Page = ({ hackers }) => {
                     join our slack
                   </button>
                 </a>
+                <Tappable onTap={() => closeModal('modal-slack')}>
                 <Box
                   sx={{
                     fontFamily: 'Terminal_Grotesk',
@@ -730,6 +735,7 @@ const Page = ({ hackers }) => {
                 >
                   x
                 </Box>
+                </Tappable>
               </Box>
             </Box>
           </Draggable>
@@ -742,8 +748,8 @@ const Page = ({ hackers }) => {
                 maxWidth: '500px',
                 width: '90vw',
                 position: 'fixed',
-                marginLeft: '30%',
-                marginTop: '-15%',
+                marginLeft: ['5%', '5%', '35%'],
+                marginTop: ['-35%','-10%'],
                 justifyContent: 'center',
                 alignItems: 'center',
                 p: 4,
@@ -778,7 +784,7 @@ const Page = ({ hackers }) => {
                   .
                 </Box>
                 <Box as="p" sx={{ fontSize: 'smaller', fontStyle: 'italic' }}>
-                  P.S As a nonprofit, even our finances are
+                  P.S As a nonprofit, even our finances are{' '}
                   <a href="https://bank.hackclub.com/hq">transparent</a>!
                 </Box>
                 <a target="_blank" href="https://github.com/hackclub">
@@ -790,7 +796,8 @@ const Page = ({ hackers }) => {
                       fontSize: '1.2em',
                       px: 2,
                       py: 1,
-                      mt: 2,
+                      mt: 3,
+                      cursor: 'pointer',
                       '&:hover': {
                         color: '#000',
                         background: 'white'
@@ -800,6 +807,7 @@ const Page = ({ hackers }) => {
                     github.com/hackclub
                   </button>
                 </a>
+                <Tappable onTap={() => closeModal('modal-github')}>
                 <Box
                   sx={{
                     fontFamily: 'Terminal_Grotesk',
@@ -822,6 +830,7 @@ const Page = ({ hackers }) => {
                 >
                   x
                 </Box>
+                </Tappable>
               </Box>
             </Box>
           </Draggable>
@@ -1218,7 +1227,7 @@ const Page = ({ hackers }) => {
                 <Box as="p">Put another way, we need to let hackers hack.</Box>
 
                 <Box as="h4">
-                  So consider this a giant sign in the window: Hackers Wanted.
+                  So consider this a giant sign in the window: <br />Hackers Wanted.
                 </Box>
 
                 <Box as="p">
