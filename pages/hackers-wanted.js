@@ -157,7 +157,8 @@ const Page = ({ hackers }) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        Name: e.target.Name.value,
+        FirstName: e.target.FirstName.value,
+        LastName: e.target.LastName.value,
         Address1: e.target.Address1.value,
         Address2: e.target.Address2.value,
         City: e.target.City.value,
@@ -529,17 +530,28 @@ const Page = ({ hackers }) => {
                   onSubmit={handleSubmit}
                   gap={[2, 3]}
                 >
-                  <Box sx={{ my: 2 }}>
-                    <label>Name:</label>
+                  <Flex sx={{ my: 2, gap: 2 }}>
+                  <Flex sx={{ flexDirection: 'column' }}>
+                    <label>First Name:</label>
                     <input
                       type="text"
-                      id="Name"
-                      name="Name"
-                      placeholder="Fiona Hackworth"
-                      sx={{ ml: 2 }}
+                      id="FirstName"
+                      name="FirstName"
+                      placeholder="Fiona"
                       required
                     />
-                  </Box>
+                  </Flex>
+                  <Flex sx={{ flexDirection: 'column' }}>
+                    <label>Last Name:</label>
+                    <input
+                      type="text"
+                      id="LastName"
+                      name="LastName"
+                      placeholder="Hackworth"
+                      required
+                    />
+                  </Flex>
+                  </Flex>
                   <Box sx={{ my: 2 }}>
                     <label>Address (Line 1):</label>
                     <input
